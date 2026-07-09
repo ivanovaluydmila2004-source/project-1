@@ -3,7 +3,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "💃😐",
+    kind: "meme",
+    visual: "natasha",
     caption: "Когда подруги сказали: просто посидим спокойно",
     text: "Какой мем лучше всего подходит к этой сцене?",
     answers: ["Наташа, вставай", "Это фиаско, братан", "Ждун", "А что случилось?"],
@@ -14,7 +15,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "🐾⏰",
+    kind: "meme",
+    visual: "cats-night",
     caption: "Три часа ночи, а разговор только стал важным",
     text: "Что за мем спрятан в этой ночной драме?",
     answers: ["Наташа, мы все уронили", "Я в своем познании настолько преисполнился", "Нельзя просто так взять и уйти", "Ты заходи, если что"],
@@ -25,7 +27,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "🧍‍♀️☕",
+    kind: "meme",
+    visual: "zhdun",
     caption: "Когда невеста сказала, что макияж займет 15 минут",
     text: "Как называется это состояние?",
     answers: ["Ждун", "Ничоси", "Борщ с капусткой", "Повар спрашивает повара"],
@@ -36,7 +39,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "😲✨",
+    kind: "meme",
+    visual: "nichosi",
     caption: "Когда жених впервые увидел ее в платье",
     text: "Какая реакция спрятана в карточке?",
     answers: ["Ничоси", "Ну давай рассказывай", "Это норма", "Совпадение? Не думаю"],
@@ -47,7 +51,8 @@ const cards = [
     round: "Пауза ведущей",
     title: "Мемный батл",
     time: "3 минуты",
-    visual: "🎤",
+    kind: "pause",
+    visual: "battle",
     caption: "Гости вспоминают самый смешной мем про отношения",
     text: "Мини-задание: каждая команда за 30 секунд придумывает мемный заголовок про невесту и жениха.",
     answers: ["Команда невесты готова", "Команда подруг готова", "Просим еще 10 секунд", "У нас уже шедевр"],
@@ -58,7 +63,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "🤔🔎",
+    kind: "meme",
+    visual: "coincidence",
     caption: "Когда совпали дата, место и настроение",
     text: "Какой мем просится сам?",
     answers: ["Совпадение? Не думаю", "Азаза", "Нельзя просто так взять", "Бонжур"],
@@ -69,7 +75,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "🫶📱",
+    kind: "meme",
+    visual: "shikarno",
     caption: "Когда он написал первым, а она сделала вид, что спокойна",
     text: "Какой вариант ближе всего?",
     answers: ["А что случилось?", "Ничего необычного", "Это мы удачно зашли", "Шикарно"],
@@ -80,7 +87,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "💅🧠",
+    kind: "meme",
+    visual: "artist",
     caption: "Когда невеста уже все решила, но делает вид, что советуется",
     text: "Какая мемная фраза подходит?",
     answers: ["Я художник, я так вижу", "Ты кто такой? Давай до свидания", "Нормально делай, нормально будет", "У меня лапки"],
@@ -91,7 +99,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "🧾😅",
+    kind: "meme",
+    visual: "budget",
     caption: "Когда бюджет свадьбы сказал: я тоже хочу внимания",
     text: "Какой мем тут звучит?",
     answers: ["Денег нет, но вы держитесь", "Зато красиво", "Это другое", "Все идет по плану"],
@@ -102,7 +111,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "🍰👀",
+    kind: "meme",
+    visual: "cake",
     caption: "Когда торт еще не вынесли, но кто-то уже смотрит на кухню",
     text: "Какая фраза подходит?",
     answers: ["А можно всех посмотреть?", "Ну когда уже?", "Я просто спросить", "Это база"],
@@ -113,7 +123,8 @@ const cards = [
     round: "Часть 1",
     title: "Угадай мем",
     time: "2 минуты",
-    visual: "📸💖",
+    kind: "meme",
+    visual: "photo",
     caption: "Когда сделали 148 фото, но хороших нужно еще",
     text: "Какая мемная правда здесь?",
     answers: ["Еще по одной", "Я не фотогенична", "Удали немедленно", "Все ответы верные"],
@@ -124,128 +135,140 @@ const cards = [
     round: "Пауза ведущей",
     title: "Фото-детектив",
     time: "4 минуты",
-    visual: "🔍📷",
+    kind: "pause",
+    visual: "photo-detective",
     caption: "Гости ищут в телефоне фото, где невеста выглядит самой счастливой",
     text: "Мини-задание: показать фото и одним предложением рассказать, почему оно теплое.",
     answers: ["Фото найдено", "История готова", "Нужно еще полминуты", "Мы плачем, но красиво"],
     correct: null,
-    note: "Это мягкая пауза для воспоминаний перед второй частью."
+    note: "Это мягкая пауза для воспоминаний перед музыкальной частью."
   },
   {
     round: "Часть 2",
-    title: "Правда или свадебная легенда",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "💌",
-    caption: "История любви: версия подруг",
-    text: "Невеста наверняка помнит первое сообщение жениха лучше, чем пароль от Госуслуг.",
-    answers: ["Правда", "Легенда", "Спросим жениха", "Это засекречено"],
-    correct: 2,
-    note: "Лучший ответ для ведущей: потом сравнить версии пары."
-  },
-  {
-    round: "Часть 2",
-    title: "Правда или свадебная легенда",
-    time: "2 минуты",
-    visual: "🍽️",
-    caption: "Свидание, которое стало историей",
-    text: "На первом свидании важнее всего было выглядеть спокойно, даже если внутри салют.",
-    answers: ["Правда", "Легенда", "Только у жениха", "Только у невесты"],
+    kind: "song",
+    visual: "wedding",
+    caption: "Строка: «Ах, эта свадьба...»",
+    text: "Какая это песня и исполнитель?",
+    answers: ["Муслим Магомаев — Свадьба", "Валерий Меладзе — Красиво", "Дима Билан — Держи", "Градусы — Невеста"],
     correct: 0,
-    note: "Очень похоже на начало красивой истории."
+    note: "Самая узнаваемая свадебная классика для общего подпевания."
   },
   {
     round: "Часть 2",
-    title: "Правда или свадебная легенда",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🎧",
-    caption: "Плейлист отношений",
-    text: "У каждой пары есть песня, которая случайно стала «их песней».",
-    answers: ["Правда", "Легенда", "Есть, но никто не признается", "Теперь нужно выбрать"],
+    kind: "song",
+    visual: "ring-song",
+    caption: "Строка: «Обручальное кольцо...»",
+    text: "Кто исполняет эту песню?",
+    answers: ["Лейся, песня — Обручальное кольцо", "Иванушки International — Тучи", "А-Студио — Улетаю", "Браво — Любите, девушки"],
     correct: 0,
-    note: "После ответа можно включить их песню или предложить гостям угадать."
+    note: "Песня прямо создана для свадебного момента."
   },
   {
     round: "Часть 2",
-    title: "Правда или свадебная легенда",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🧳",
-    caption: "Совместная поездка",
-    text: "Первая совместная поездка проверяет пару лучше любого теста.",
-    answers: ["Правда", "Легенда", "Проверяет только чемодан", "Проверяет навигатор"],
+    kind: "song",
+    visual: "bride-song",
+    caption: "Строка: «Ты сегодня невеста...»",
+    text: "Что это за трек?",
+    answers: ["Градусы — Невеста", "Руки Вверх! — 18 мне уже", "Artik & Asti — Неделимы", "Звери — До скорой встречи"],
     correct: 0,
-    note: "Если после дороги хочется ехать еще, это серьезно."
+    note: "Современная карточка специально для невесты."
+  },
+  {
+    round: "Часть 2",
+    title: "Угадай песню",
+    time: "2 минуты",
+    kind: "song",
+    visual: "forever",
+    caption: "Строка: «Вместе и навсегда...»",
+    text: "Выбери правильный вариант.",
+    answers: ["Алсу — Вместе и навсегда", "МакSим — Знаешь ли ты", "Serebro — Мама Люба", "IOWA — Улыбайся"],
+    correct: 0,
+    note: "Очень свадебное настроение: мягко, светло и навсегда."
   },
   {
     round: "Пауза ведущей",
-    title: "Версии подруг",
+    title: "Музыкальный припев",
     time: "4 минуты",
-    visual: "💬",
-    caption: "Какая деталь их отношений самая узнаваемая?",
-    text: "Мини-задание: гости называют по одной привычке пары, по которой сразу понятно: это они.",
-    answers: ["Есть версия", "У нас две версии", "Это будет смешно", "Это будет мило"],
+    kind: "pause",
+    visual: "karaoke",
+    caption: "Гости выбирают песню, которую точно включили бы паре",
+    text: "Мини-задание: каждая команда называет один трек для первого семейного плейлиста.",
+    answers: ["Лиричная", "Танцевальная", "Смешная", "Та самая"],
     correct: null,
-    note: "Пусть невеста выберет самую точную версию."
+    note: "Можно включить 15 секунд победившего трека."
   },
   {
     round: "Часть 2",
-    title: "Правда или свадебная легенда",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🏠",
-    caption: "Бытовая магия",
-    text: "Любовь видна не только в букетах, но и в том, кто укрывает пледом.",
-    answers: ["Правда", "Легенда", "Это договоренность", "Это суперсила"],
+    kind: "song",
+    visual: "love-hit",
+    caption: "Строка: «Я буду любить тебя...»",
+    text: "Какая песня звучит по смыслу?",
+    answers: ["Дима Билан — Я просто люблю тебя", "Нюша — Выше", "Баста — Выпускной", "Ёлка — Прованс"],
     correct: 0,
-    note: "Самые тихие жесты часто самые дорогие."
+    note: "Хороший вариант для романтичной паузы."
   },
   {
     round: "Часть 2",
-    title: "Угадай про пару",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🗺️",
-    caption: "Если бы можно было выбрать любую точку планеты",
-    text: "Куда пара скорее всего отправилась бы в медовый месяц мечты?",
-    answers: ["К океану", "В горы", "В город с красивыми улочками", "Туда, где можно быть вдвоем"],
-    correct: 3,
-    note: "Самый романтичный ответ: место важно, но главное — с кем."
+    kind: "song",
+    visual: "hands",
+    caption: "Строка: «Я поднимаю руки...»",
+    text: "Кто исполнитель?",
+    answers: ["Григорий Лепс — Я поднимаю руки", "Мот — Капкан", "Би-2 — Мой рок-н-ролл", "Uma2rman — Проститься"],
+    correct: 0,
+    note: "Не строго свадебная, зато отлично работает на танцпол."
   },
   {
     round: "Часть 2",
-    title: "Угадай про пару",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🛋️",
-    caption: "Идеальный вечер без суеты",
-    text: "Что больше похоже на их общее любимое развлечение?",
-    answers: ["Кино и вкусная еда", "Прогулка", "Игры и разговоры", "Все зависит от настроения"],
-    correct: 3,
-    note: "Ведущая может спросить невесту, какой вариант ближе."
+    kind: "song",
+    visual: "kiss",
+    caption: "Строка: «Он тебя целует...»",
+    text: "Какая группа это поет?",
+    answers: ["Руки Вверх! — Он тебя целует", "Дискотека Авария — Небо", "Hi-Fi — Не дано", "Корни — Ты узнаешь ее"],
+    correct: 0,
+    note: "Для веселой части вечера и ностальгического смеха."
   },
   {
     round: "Часть 2",
-    title: "Угадай про пару",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🏡",
-    caption: "Три главные вещи дома",
-    text: "Что чаще всего делает дом по-настоящему общим?",
-    answers: ["Плед, кружки и любимый сериал", "Ремонт, списки и шкаф", "Кухня, диван и планы", "То, что выбрали вместе"],
-    correct: 3,
-    note: "Хороший мостик к разговору о совместном быте и маленьких ритуалах."
+    kind: "song",
+    visual: "heart",
+    caption: "Строка: «Любовь настала...»",
+    text: "Выбери правильный ответ.",
+    answers: ["Роза Рымбаева — Любовь настала", "Полина Гагарина — Спектакль окончен", "Винтаж — Ева", "Чай вдвоем — День рождения"],
+    correct: 0,
+    note: "Очень нежная классика для романтичного финала блока."
   },
   {
     round: "Часть 2",
-    title: "Угадай про пару",
+    title: "Угадай песню",
     time: "2 минуты",
-    visual: "🎓",
-    caption: "Школьные легенды Сени",
-    text: "Какой предмет мог быть любимым у Сени в школе?",
-    answers: ["История", "Математика", "Физкультура", "Пусть невеста угадает"],
-    correct: 3,
-    note: "Идеальная карточка для проверки: знает ли невеста школьную версию жениха."
+    kind: "song",
+    visual: "dance",
+    caption: "Строка: «Самая, самая...»",
+    text: "Кто исполнитель?",
+    answers: ["Егор Крид — Самая Самая", "Мот — Сопрано", "JONY — Комета", "Ханна — Омар Хайям"],
+    correct: 0,
+    note: "Для невесты эта карточка звучит особенно правильно."
   },
   {
     round: "Пауза ведущей",
     title: "Тост на одно слово",
     time: "4 минуты",
-    visual: "🥂",
+    kind: "pause",
+    visual: "toast",
     caption: "Каждая гостья выбирает одно слово для будущей семьи",
     text: "Мини-задание: назвать слово-пожелание и коротко объяснить его.",
     answers: ["Любовь", "Дом", "Смех", "Навсегда"],
@@ -256,13 +279,38 @@ const cards = [
     round: "Часть 2",
     title: "Финальный тост",
     time: "2 минуты",
-    visual: "👰💗🤵",
-    caption: "История, которая стала свадьбой",
+    kind: "song",
+    visual: "finale",
+    caption: "Финальный припев вечера",
     text: "Главная победа сегодня не в баллах, а в том, что у этой истории будет свадьба.",
     answers: ["Правда", "Абсолютная правда", "Самая правда", "Все ответы верные"],
     correct: 3,
     note: "Финал мягкий: все дороги ведут к любви."
   }
+];
+
+const petSteps = [
+  "Котенок проснулся",
+  "Кормим котенка",
+  "Котенок сыт",
+  "Моем лапки",
+  "Пенная ванна",
+  "Сушим полотенцем",
+  "Расчесываем шерстку",
+  "Добавляем бантик",
+  "Надеваем корону",
+  "Выдаем розовый шарик",
+  "Котенок готовит тост",
+  "Котенок танцует",
+  "Добавляем блеск",
+  "Котенок в фотозоне",
+  "Котенок ловит букет",
+  "Котенок стал звездой",
+  "Котенок несет кольца",
+  "Праздничный образ готов",
+  "Котенок сияет",
+  "Финальный мяу-тост",
+  "Котенок королевы вечера"
 ];
 
 const scoredCards = cards.filter((card) => card.correct !== null).length;
@@ -286,6 +334,9 @@ const answers = document.querySelector("[data-answers]");
 const feedback = document.querySelector("[data-feedback]");
 const finalScore = document.querySelector("[data-final-score]");
 const questionCard = document.querySelector(".question-card");
+const petScene = document.querySelector("[data-pet-scene]");
+const petStep = document.querySelector("[data-pet-step]");
+const petLevel = document.querySelector("[data-pet-level]");
 
 let index = 0;
 let score = 0;
@@ -311,15 +362,11 @@ function renderQuestion() {
   feedback.textContent = "";
   nextButton.disabled = true;
   questionCard.classList.toggle("pause-card", current.correct === null);
+  questionCard.classList.toggle("song-card", current.kind === "song");
 
-  visual.innerHTML = `
-    <div class="meme-visual">
-      <div class="meme-emoji">${current.visual}</div>
-      <div class="meme-caption">${current.caption}</div>
-    </div>
-  `;
-
+  visual.innerHTML = renderVisual(current);
   answers.innerHTML = "";
+
   current.answers.forEach((answer, answerIndex) => {
     const button = document.createElement("button");
     button.className = "answer";
@@ -328,6 +375,50 @@ function renderQuestion() {
     button.addEventListener("click", () => chooseAnswer(answerIndex));
     answers.append(button);
   });
+
+  updatePet();
+}
+
+function renderVisual(card) {
+  if (card.kind === "song") {
+    return `
+      <div class="song-poster song-poster--${card.visual}">
+        <div class="vinyl"></div>
+        <div class="sound-bars"><span></span><span></span><span></span><span></span></div>
+        <div class="poster-title">${card.caption}</div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="meme-poster meme-poster--${card.visual}">
+      <div class="meme-art">
+        ${memeArt(card.visual)}
+      </div>
+      <div class="meme-caption">${card.caption}</div>
+    </div>
+  `;
+}
+
+function memeArt(type) {
+  const art = {
+    natasha: '<span class="meme-moon"></span><span class="cat cat-a"></span><span class="cat cat-b"></span><span class="sleepy-person"></span>',
+    "cats-night": '<span class="meme-moon"></span><span class="cat cat-a"></span><span class="cat cat-b"></span><span class="cat cat-c"></span>',
+    zhdun: '<span class="zhdun-body"></span><span class="zhdun-head"></span><span class="zhdun-nose"></span>',
+    nichosi: '<span class="wow-face"></span><span class="spark spark-a"></span><span class="spark spark-b"></span>',
+    battle: '<span class="mic"></span><span class="speech speech-a"></span><span class="speech speech-b"></span>',
+    coincidence: '<span class="detective"></span><span class="magnifier"></span><span class="question-mark">?</span>',
+    shikarno: '<span class="phone"></span><span class="heart-pop"></span><span class="cool-face"></span>',
+    artist: '<span class="paint-palette"></span><span class="brush"></span><span class="crown-doodle"></span>',
+    budget: '<span class="receipt"></span><span class="coin coin-a"></span><span class="coin coin-b"></span>',
+    cake: '<span class="cake"></span><span class="eyes"></span>',
+    photo: '<span class="camera"></span><span class="flash"></span><span class="heart-pop"></span>',
+    "photo-detective": '<span class="photo-frame"></span><span class="magnifier"></span>',
+    karaoke: '<span class="mic"></span><span class="note note-a"></span><span class="note note-b"></span>',
+    toast: '<span class="glass glass-a"></span><span class="glass glass-b"></span>'
+  };
+
+  return art[type] || '<span class="heart-pop"></span>';
 }
 
 function chooseAnswer(answerIndex) {
@@ -341,6 +432,7 @@ function chooseAnswer(answerIndex) {
 
   if (!isPause && isCorrect) {
     score += 1;
+    updatePet(true);
     burstConfetti(12);
   }
 
@@ -354,6 +446,18 @@ function chooseAnswer(answerIndex) {
   scoreLabel.textContent = score;
   feedback.textContent = current.note;
   nextButton.disabled = false;
+}
+
+function updatePet(celebrate = false) {
+  const level = Math.min(score, scoredCards);
+  petLevel.textContent = `${level} / ${scoredCards}`;
+  petStep.textContent = petSteps[level] || petSteps[petSteps.length - 1];
+  petScene.dataset.level = String(level);
+  petScene.classList.toggle("is-celebrating", celebrate);
+
+  if (celebrate) {
+    window.setTimeout(() => petScene.classList.remove("is-celebrating"), 650);
+  }
 }
 
 function burstConfetti(amount) {
