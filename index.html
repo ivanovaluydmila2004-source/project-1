@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Девичник 17.07.2026</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero screen is-active" data-screen="hero">
+        <div class="hero__media" aria-hidden="true">
+          <div class="balloon balloon--one"></div>
+          <div class="balloon balloon--two"></div>
+          <div class="ring"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="hero__content">
+          <p class="date">17.07.2026</p>
+          <h1>Девичник для невесты</h1>
+          <p class="lead">Нежный квиз про мемы, подруг и самые теплые моменты любви.</p>
+          <button class="primary" type="button" data-start>Начать квиз</button>
+        </div>
+      </section>
+
+      <section class="screen quiz-shell" data-screen="quiz">
+        <header class="topbar">
+          <div>
+            <p class="kicker" data-round-label>Часть 1</p>
+            <h2 data-question-title>Угадай мем</h2>
+          </div>
+          <div class="score">
+            <span data-progress>1 / 12</span>
+            <strong data-score>0</strong>
+          </div>
+        </header>
+
+        <div class="question-card">
+          <div class="meme-stage" data-visual></div>
+          <p class="question" data-question-text></p>
+          <div class="answers" data-answers></div>
+          <p class="feedback" data-feedback></p>
+          <button class="secondary" type="button" data-next disabled>Дальше</button>
+        </div>
+      </section>
+
+      <section class="screen finale" data-screen="finale">
+        <p class="date">Финал</p>
+        <h2>Невеста, ты справилась!</h2>
+        <p class="lead">Самое время поднять бокалы, обнять виновницу праздника и оставить ей пару теплых слов.</p>
+        <div class="result">
+          <span>Баллы</span>
+          <strong data-final-score>0 / 12</strong>
+        </div>
+        <div class="final-actions">
+          <button class="primary" type="button" data-restart>Пройти еще раз</button>
+          <button class="ghost" type="button" data-host-toggle>Блок ведущей</button>
+        </div>
+        <section class="host-panel" data-host-panel hidden>
+          <h3>Интервью после квиза</h3>
+          <p>Этот блок не участвует в игре. Его можно открыть только ведущей после финала.</p>
+          <ol>
+            <li>В какой момент ты поняла, что с ним можно строить жизнь?</li>
+            <li>Какая ваша общая история всегда вызывает улыбку?</li>
+            <li>Какая его привычка сначала удивляла, а теперь стала родной?</li>
+            <li>Что бы ты сказала себе в день вашей первой встречи?</li>
+            <li>Каким ты видишь ваш самый обычный счастливый день через десять лет?</li>
+            <li>За что ты особенно благодарна своим подругам в этой истории?</li>
+          </ol>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
