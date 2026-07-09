@@ -38,6 +38,20 @@ body {
   font-family: "Gabin", Georgia, serif;
 }
 
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(rgba(91, 52, 56, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 52, 56, 0.035) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mix-blend-mode: multiply;
+}
+
 button {
   border: 0;
   font: inherit;
@@ -45,8 +59,58 @@ button {
 }
 
 .app {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   overflow: hidden;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient span {
+  position: absolute;
+  width: clamp(80px, 13vw, 180px);
+  aspect-ratio: 1;
+  border-radius: 42% 58% 62% 38%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.66), rgba(201, 121, 130, 0.26));
+  box-shadow: inset -18px -22px 48px rgba(157, 68, 84, 0.12), 0 24px 70px rgba(157, 68, 84, 0.16);
+  animation: liquidFloat 16s ease-in-out infinite;
+}
+
+.ambient span:nth-child(1) {
+  left: 8%;
+  top: 12%;
+}
+
+.ambient span:nth-child(2) {
+  right: 10%;
+  top: 18%;
+  animation-delay: -4s;
+}
+
+.ambient span:nth-child(3) {
+  left: 20%;
+  bottom: 12%;
+  animation-delay: -7s;
+}
+
+.ambient span:nth-child(4) {
+  right: 24%;
+  bottom: 8%;
+  animation-delay: -10s;
+}
+
+.ambient span:nth-child(5) {
+  left: 48%;
+  top: 42%;
+  width: clamp(48px, 8vw, 110px);
+  animation-delay: -12s;
 }
 
 .screen {
@@ -57,6 +121,7 @@ button {
 
 .screen.is-active {
   display: grid;
+  animation: screenIn 520ms ease both;
 }
 
 .hero {
@@ -109,6 +174,8 @@ h1 {
   font-size: clamp(58px, 11vw, 142px);
   line-height: 0.86;
   color: var(--rose-deep);
+  text-shadow: 0 16px 32px rgba(157, 68, 84, 0.14);
+  animation: kineticTitle 5.5s ease-in-out infinite;
 }
 
 h2 {
@@ -127,6 +194,25 @@ h3 {
   margin: 22px 0 30px;
   font-size: clamp(21px, 2.5vw, 30px);
   line-height: 1.25;
+}
+
+.plan-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 26px;
+}
+
+.plan-strip span {
+  display: inline-grid;
+  min-height: 38px;
+  place-items: center;
+  padding: 8px 14px;
+  color: var(--rose-deep);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(157, 68, 84, 0.18);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
 }
 
 .primary,
@@ -185,6 +271,7 @@ h3 {
   aspect-ratio: 1 / 1.16;
   border-radius: 52% 52% 48% 48%;
   background: linear-gradient(145deg, #fff4ee 0%, #d99ba0 48%, #a85c65 100%);
+  animation: floaty 6s ease-in-out infinite;
 }
 
 .balloon::after {
@@ -207,6 +294,7 @@ h3 {
   bottom: 12vh;
   width: clamp(82px, 12vw, 160px);
   opacity: 0.72;
+  animation-delay: -2.4s;
 }
 
 .ring {
@@ -238,6 +326,7 @@ h3 {
   border-radius: 70% 70% 44% 44%;
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.18));
   border: 1px solid rgba(255, 255, 255, 0.78);
+  animation: veilSway 8s ease-in-out infinite;
 }
 
 .quiz-shell {
@@ -254,6 +343,23 @@ h3 {
   justify-content: space-between;
   gap: 18px;
   padding-top: 8px;
+}
+
+.progress-track {
+  height: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(157, 68, 84, 0.12);
+  border-radius: 999px;
+}
+
+.progress-track span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--rose-deep), #f0a2aa, var(--gold));
+  border-radius: inherit;
+  transition: width 420ms ease;
 }
 
 .score {
@@ -284,6 +390,8 @@ h3 {
   border-radius: 8px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
+  transform-style: preserve-3d;
+  animation: cardRise 560ms ease both;
 }
 
 .meme-stage {
@@ -297,6 +405,7 @@ h3 {
     repeating-linear-gradient(90deg, rgba(201, 121, 130, 0.12) 0 1px, transparent 1px 18px);
   border: 1px dashed rgba(157, 68, 84, 0.28);
   text-align: center;
+  overflow: hidden;
 }
 
 .meme-visual {
@@ -308,12 +417,26 @@ h3 {
 .meme-emoji {
   font-size: clamp(54px, 11vw, 112px);
   line-height: 1;
+  animation: popIn 520ms cubic-bezier(0.2, 1.4, 0.35, 1) both;
 }
 
 .meme-caption {
   max-width: 680px;
   font-size: clamp(26px, 4vw, 48px);
   color: var(--rose-deep);
+  animation: captionSlide 500ms ease 80ms both;
+}
+
+.timing {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0;
+  padding: 7px 12px;
+  color: var(--rose-deep);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(157, 68, 84, 0.16);
+  border-radius: 999px;
+  font-size: 18px;
 }
 
 .question {
@@ -336,6 +459,13 @@ h3 {
   border: 1px solid rgba(157, 68, 84, 0.18);
   border-radius: 8px;
   text-align: left;
+  box-shadow: 0 8px 20px rgba(157, 68, 84, 0.07);
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.answer:hover:not(:disabled) {
+  transform: translateY(-2px) rotate(-0.2deg);
+  box-shadow: 0 14px 28px rgba(157, 68, 84, 0.13);
 }
 
 .answer.is-correct {
@@ -359,6 +489,16 @@ h3 {
   margin: 0;
   color: var(--rose-deep);
   font-size: 21px;
+}
+
+.pause-card .meme-stage {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.84), transparent 15rem),
+    linear-gradient(135deg, rgba(255, 232, 236, 0.82), rgba(255, 250, 246, 0.92));
+}
+
+.pause-card .answer {
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .finale {
@@ -410,6 +550,125 @@ h3 {
 .host-panel li {
   margin: 8px 0;
   font-size: 19px;
+}
+
+.confetti {
+  position: fixed;
+  top: -18px;
+  z-index: 5;
+  width: 10px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--rose);
+  pointer-events: none;
+  animation: confettiFall 1200ms ease-in forwards;
+}
+
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kineticTitle {
+  0%,
+  100% {
+    transform: translateY(0) skewX(0deg);
+  }
+  45% {
+    transform: translateY(-3px) skewX(-1deg);
+  }
+  70% {
+    transform: translateY(2px) skewX(0.8deg);
+  }
+}
+
+@keyframes liquidFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    border-radius: 42% 58% 62% 38%;
+  }
+  50% {
+    transform: translate3d(14px, -22px, 0) rotate(10deg);
+    border-radius: 62% 38% 46% 54%;
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+}
+
+@keyframes veilSway {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-10px);
+  }
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(4deg) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateX(0deg) translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.72) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes captionSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(105vh) rotate(680deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 760px) {

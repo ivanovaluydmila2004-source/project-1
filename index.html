@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <div class="ambient" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <main class="app">
       <section class="hero screen is-active" data-screen="hero">
         <div class="hero__media" aria-hidden="true">
@@ -18,7 +25,12 @@
         <div class="hero__content">
           <p class="date">17.07.2026</p>
           <h1>Девичник для невесты</h1>
-          <p class="lead">Нежный квиз про мемы, подруг и самые теплые моменты любви.</p>
+          <p class="lead">Час мемов, теплых воспоминаний, смешных версий подруг и маленьких признаний про любовь.</p>
+          <div class="plan-strip" aria-label="План квиза">
+            <span>60 минут</span>
+            <span>24 карточки</span>
+            <span>4 паузы ведущей</span>
+          </div>
           <button class="primary" type="button" data-start>Начать квиз</button>
         </div>
       </section>
@@ -30,13 +42,18 @@
             <h2 data-question-title>Угадай мем</h2>
           </div>
           <div class="score">
-            <span data-progress>1 / 12</span>
+            <span data-progress>1 / 24</span>
             <strong data-score>0</strong>
           </div>
         </header>
 
+        <div class="progress-track" aria-hidden="true">
+          <span data-progress-bar></span>
+        </div>
+
         <div class="question-card">
           <div class="meme-stage" data-visual></div>
+          <p class="timing" data-timing></p>
           <p class="question" data-question-text></p>
           <div class="answers" data-answers></div>
           <p class="feedback" data-feedback></p>
@@ -50,7 +67,7 @@
         <p class="lead">Самое время поднять бокалы, обнять виновницу праздника и оставить ей пару теплых слов.</p>
         <div class="result">
           <span>Баллы</span>
-          <strong data-final-score>0 / 12</strong>
+          <strong data-final-score>0 / 24</strong>
         </div>
         <div class="final-actions">
           <button class="primary" type="button" data-restart>Пройти еще раз</button>
@@ -60,6 +77,17 @@
           <h3>Интервью после квиза</h3>
           <p>Этот блок не участвует в игре. Его можно открыть только ведущей после финала.</p>
           <ol>
+            <li>Где было самое необычное свидание?</li>
+            <li>С каким артистом ассоциируется у тебя Сеня?</li>
+            <li>Как и где ты призналась ему в чувствах?</li>
+            <li>Какие качества ценишь в нем?</li>
+            <li>Три совместные и главные вещи в доме для тебя?</li>
+            <li>Как вы ласково называете друг друга?</li>
+            <li>С каким животным ты ассоциируешь жениха?</li>
+            <li>Какой любимый предмет был у Сени в школе?</li>
+            <li>Какое любимое общее развлечение у вас в свободное время?</li>
+            <li>Куда бы вы предпочли отправиться в медовый месяц, если бы имели возможность избрать любой уголок планеты?</li>
+            <li>Какие качества цените друг в друге больше всего?</li>
             <li>В какой момент ты поняла, что с ним можно строить жизнь?</li>
             <li>Какая ваша общая история всегда вызывает улыбку?</li>
             <li>Какая его привычка сначала удивляла, а теперь стала родной?</li>
