@@ -149,7 +149,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "wedding",
-    caption: "Строка: «Ах, эта свадьба...»",
+    caption: "Подсказка: большая шумная свадьба, гости поют, танцуют, и весь двор будто празднует вместе. Короткий фрагмент: «Ах, эта свадьба...»",
     text: "Какая это песня и исполнитель?",
     answers: ["Муслим Магомаев — Свадьба", "Валерий Меладзе — Красиво", "Дима Билан — Держи", "Градусы — Невеста"],
     correct: 0,
@@ -161,7 +161,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "ring-song",
-    caption: "Строка: «Обручальное кольцо...»",
+    caption: "Подсказка: песня про главный символ семьи, обещание быть рядом и момент, когда кольцо становится больше украшения. Фрагмент: «Обручальное кольцо...»",
     text: "Кто исполняет эту песню?",
     answers: ["Лейся, песня — Обручальное кольцо", "Иванушки International — Тучи", "А-Студио — Улетаю", "Браво — Любите, девушки"],
     correct: 0,
@@ -173,7 +173,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "bride-song",
-    caption: "Строка: «Ты сегодня невеста...»",
+    caption: "Подсказка: современный трек, где вся сцена будто светится вокруг девушки в статусе невесты. Фрагмент: «Ты сегодня невеста...»",
     text: "Что это за трек?",
     answers: ["Градусы — Невеста", "Руки Вверх! — 18 мне уже", "Artik & Asti — Неделимы", "Звери — До скорой встречи"],
     correct: 0,
@@ -185,7 +185,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "forever",
-    caption: "Строка: «Вместе и навсегда...»",
+    caption: "Подсказка: нежная песня про выбор друг друга, общее будущее и обещание держаться вместе. Фрагмент: «Вместе и навсегда...»",
     text: "Выбери правильный вариант.",
     answers: ["Алсу — Вместе и навсегда", "МакSим — Знаешь ли ты", "Serebro — Мама Люба", "IOWA — Улыбайся"],
     correct: 0,
@@ -209,7 +209,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "love-hit",
-    caption: "Строка: «Я буду любить тебя...»",
+    caption: "Подсказка: романтичный поп-хит, где герой говорит о любви прямо, без иронии и игр. Фрагмент: «Я буду любить тебя...»",
     text: "Какая песня звучит по смыслу?",
     answers: ["Дима Билан — Я просто люблю тебя", "Нюша — Выше", "Баста — Выпускной", "Ёлка — Прованс"],
     correct: 0,
@@ -221,7 +221,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "hands",
-    caption: "Строка: «Я поднимаю руки...»",
+    caption: "Подсказка: трек для момента, когда хочется встать, подпевать и уже не делать вид, что это спокойный вечер. Фрагмент: «Я поднимаю руки...»",
     text: "Кто исполнитель?",
     answers: ["Григорий Лепс — Я поднимаю руки", "Мот — Капкан", "Би-2 — Мой рок-н-ролл", "Uma2rman — Проститься"],
     correct: 0,
@@ -233,7 +233,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "kiss",
-    caption: "Строка: «Он тебя целует...»",
+    caption: "Подсказка: ностальгический танцевальный хит про чувства, ревность и тот самый припев из юности. Фрагмент: «Он тебя целует...»",
     text: "Какая группа это поет?",
     answers: ["Руки Вверх! — Он тебя целует", "Дискотека Авария — Небо", "Hi-Fi — Не дано", "Корни — Ты узнаешь ее"],
     correct: 0,
@@ -245,7 +245,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "heart",
-    caption: "Строка: «Любовь настала...»",
+    caption: "Подсказка: взрослая романтичная классика про момент, когда чувство уже невозможно не назвать. Фрагмент: «Любовь настала...»",
     text: "Выбери правильный ответ.",
     answers: ["Роза Рымбаева — Любовь настала", "Полина Гагарина — Спектакль окончен", "Винтаж — Ева", "Чай вдвоем — День рождения"],
     correct: 0,
@@ -257,7 +257,7 @@ const cards = [
     time: "2 минуты",
     kind: "song",
     visual: "dance",
-    caption: "Строка: «Самая, самая...»",
+    caption: "Подсказка: легкий хит-комплимент, который идеально подходит невесте, когда все внимание на ней. Фрагмент: «Самая, самая...»",
     text: "Кто исполнитель?",
     answers: ["Егор Крид — Самая Самая", "Мот — Сопрано", "JONY — Комета", "Ханна — Омар Хайям"],
     correct: 0,
@@ -365,6 +365,8 @@ function renderQuestion() {
   questionCard.classList.toggle("song-card", current.kind === "song");
 
   visual.innerHTML = renderVisual(current);
+  visual.classList.remove("is-flipping");
+  window.requestAnimationFrame(() => visual.classList.add("is-flipping"));
   answers.innerHTML = "";
 
   current.answers.forEach((answer, answerIndex) => {
@@ -372,6 +374,7 @@ function renderQuestion() {
     button.className = "answer";
     button.type = "button";
     button.textContent = answer;
+    button.style.setProperty("--answer-delay", `${answerIndex * 70}ms`);
     button.addEventListener("click", () => chooseAnswer(answerIndex));
     answers.append(button);
   });
@@ -434,6 +437,8 @@ function chooseAnswer(answerIndex) {
     score += 1;
     updatePet(true);
     burstConfetti(12);
+    questionCard.classList.add("is-correct-pop");
+    window.setTimeout(() => questionCard.classList.remove("is-correct-pop"), 700);
   }
 
   buttons.forEach((button, buttonIndex) => {

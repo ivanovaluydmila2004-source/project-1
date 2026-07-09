@@ -129,6 +129,7 @@ button {
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
   padding: 36px clamp(20px, 6vw, 76px);
+  animation: heroGlow 9s ease-in-out infinite;
 }
 
 .hero::before,
@@ -632,6 +633,10 @@ h3 {
   animation: cardRise 560ms ease both;
 }
 
+.question-card.is-correct-pop {
+  animation: correctPop 680ms ease both;
+}
+
 .meme-stage {
   position: relative;
   display: grid;
@@ -645,6 +650,12 @@ h3 {
   border: 1px dashed rgba(157, 68, 84, 0.28);
   text-align: center;
   overflow: hidden;
+  perspective: 1000px;
+}
+
+.meme-stage.is-flipping .meme-poster,
+.meme-stage.is-flipping .song-poster {
+  animation: posterFlip 720ms cubic-bezier(0.2, 1.2, 0.3, 1) both;
 }
 
 .meme-poster,
@@ -659,6 +670,17 @@ h3 {
   border-radius: 8px;
   background: linear-gradient(135deg, #fffaf6, #ffdce2);
   box-shadow: inset 0 0 0 1px rgba(157, 68, 84, 0.14), 0 18px 44px rgba(157, 68, 84, 0.13);
+  transform-origin: center;
+}
+
+.meme-poster::after,
+.song-poster::after {
+  position: absolute;
+  inset: -40% -70%;
+  content: "";
+  background: linear-gradient(120deg, transparent 38%, rgba(255, 255, 255, 0.58) 48%, transparent 58%);
+  transform: translateX(-45%) rotate(8deg);
+  animation: shimmerSweep 3.8s ease-in-out infinite;
 }
 
 .meme-poster::before,
@@ -678,6 +700,7 @@ h3 {
   background:
     radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.9), transparent 54px),
     linear-gradient(145deg, rgba(255, 255, 255, 0.56), rgba(240, 162, 170, 0.32));
+  animation: artFloat 4.8s ease-in-out infinite;
 }
 
 .meme-art span {
@@ -1190,6 +1213,7 @@ h3 {
   font-size: clamp(26px, 4vw, 46px);
   text-shadow: 0 10px 26px rgba(91, 52, 56, 0.32);
   text-align: center;
+  animation: lyricPulse 2.6s ease-in-out infinite;
 }
 
 .vinyl {
@@ -1275,6 +1299,10 @@ h3 {
   border-radius: 8px;
   text-align: left;
   box-shadow: 0 8px 20px rgba(157, 68, 84, 0.07);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: answerIn 360ms ease forwards;
+  animation-delay: var(--answer-delay, 0ms);
   transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
 }
 
@@ -1287,12 +1315,14 @@ h3 {
   color: #fff;
   background: #8f9f74;
   border-color: #8f9f74;
+  animation: answerCorrect 520ms ease both;
 }
 
 .answer.is-wrong {
   color: #fff;
   background: #b96573;
   border-color: #b96573;
+  animation: answerWrong 420ms ease both;
 }
 
 .answer:disabled {
@@ -1390,6 +1420,16 @@ h3 {
   }
 }
 
+@keyframes heroGlow {
+  0%,
+  100% {
+    filter: saturate(1);
+  }
+  50% {
+    filter: saturate(1.12) brightness(1.02);
+  }
+}
+
 @keyframes kineticTitle {
   0%,
   100% {
@@ -1443,6 +1483,105 @@ h3 {
   to {
     opacity: 1;
     transform: perspective(900px) rotateX(0deg) translateY(0);
+  }
+}
+
+@keyframes correctPop {
+  0%,
+  100% {
+    transform: perspective(900px) rotateX(0deg) scale(1);
+    box-shadow: var(--shadow);
+  }
+  38% {
+    transform: perspective(900px) rotateX(-2deg) scale(1.025);
+    box-shadow: 0 28px 90px rgba(143, 159, 116, 0.38);
+  }
+}
+
+@keyframes posterFlip {
+  0% {
+    opacity: 0;
+    transform: rotateY(-22deg) translateY(22px) scale(0.96);
+  }
+  55% {
+    opacity: 1;
+    transform: rotateY(5deg) translateY(-4px) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmerSweep {
+  0%,
+  62% {
+    transform: translateX(-55%) rotate(8deg);
+    opacity: 0;
+  }
+  72% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(55%) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+@keyframes artFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.4deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0.6deg);
+  }
+}
+
+@keyframes lyricPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 10px 26px rgba(91, 52, 56, 0.32);
+  }
+  50% {
+    transform: scale(1.018);
+    text-shadow: 0 16px 36px rgba(255, 240, 242, 0.42);
+  }
+}
+
+@keyframes answerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes answerCorrect {
+  0% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.035) rotate(-0.6deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes answerWrong {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  24% {
+    transform: translateX(-5px);
+  }
+  48% {
+    transform: translateX(5px);
+  }
+  72% {
+    transform: translateX(-3px);
   }
 }
 
