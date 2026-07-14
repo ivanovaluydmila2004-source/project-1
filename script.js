@@ -766,14 +766,11 @@ function renderQuestion() {
 
 function renderReveal() {
   const current = cards[index];
+  const revealMeta = getRevealMeta(current);
 
   awaitingReveal = true;
   roundLabel.textContent = current.round;
-  questionTitle.textContent = current.round === "Часть 1"
-    ? "Правильный ответ"
-    : current.round === "Часть 3"
-      ? "Верный ответ"
-      : "Ответ Арсения";
+  questionTitle.textContent = revealMeta.heading;
   timing.textContent = "Экран ответа";
   questionText.textContent = current.reveal;
   feedback.textContent = selectedReveal?.label ? `Выбрано: ${selectedReveal.label}.` : "";
@@ -789,12 +786,14 @@ function renderReveal() {
 
 function renderVisual(card, mode = "question") {
   if (mode === "reveal") {
+    const revealMeta = getRevealMeta(card);
+
     return `
-      <div class="answer-poster editorial-poster">
+      <div class="answer-poster answer-poster--${revealMeta.state} editorial-poster">
         <div class="poster-badge">${card.round}</div>
-        <div class="answer-mark">OK</div>
-        <div class="poster-title">${card.round === "Часть 1" ? "Правильный ответ" : card.round === "Часть 3" ? "Верный ответ" : "Ответ Арсения"}</div>
-        <div class="poster-ribbon">reveal moment</div>
+        <div class="answer-mark">${revealMeta.mark}</div>
+        <div class="poster-title">${revealMeta.title}</div>
+        <div class="poster-ribbon">${revealMeta.ribbon}</div>
       </div>
     `;
   }
@@ -886,6 +885,74 @@ function visualHeadline(card) {
   return "история пары";
 }
 
+function getRevealMeta(card) {
+  const state = getAnswerState(card);
+
+  if (card.round === "Часть 3") {
+    return {
+      state: "neutral",
+      heading: "Верный ответ",
+      title: "Верный ответ",
+      mark: "♪",
+      ribbon: "музыкальная разгадка"
+    };
+  }
+
+  if (state === "correct") {
+    return {
+      state,
+      heading: card.round === "Часть 1" ? "Верно" : "Совпало",
+      title: card.round === "Часть 1" ? "Верно" : "Совпало",
+      mark: "ДА",
+      ribbon: "ответ совпал"
+    };
+  }
+
+  if (state === "partial") {
+    return {
+      state,
+      heading: "Почти совпало",
+      title: "Почти совпало",
+      mark: "≈",
+      ribbon: "близкая версия"
+    };
+  }
+
+  if (state === "different") {
+    return {
+      state,
+      heading: card.round === "Часть 1" ? "Правильный ответ" : "Ответ отличается",
+      title: card.round === "Часть 1" ? "Правильный ответ" : "Ответ отличается",
+      mark: "→",
+      ribbon: card.round === "Часть 1" ? "смотрим ответ" : "новая деталь"
+    };
+  }
+
+  return {
+    state: "neutral",
+    heading: card.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения",
+    title: card.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения",
+    mark: "OK",
+    ribbon: "экран ответа"
+  };
+}
+
+function getAnswerState(card) {
+  if (!selectedReveal || card.type !== "question") return "neutral";
+
+  if (typeof card.correct === "number") {
+    return selectedReveal.answerIndex === card.correct ? "correct" : "different";
+  }
+
+  if (card.answers?.[0]?.includes("Совпало")) {
+    if (selectedReveal.answerIndex === 0) return "correct";
+    if (selectedReveal.answerIndex === 1) return "partial";
+    return "different";
+  }
+
+  return "neutral";
+}
+
 function groomSymbol(type) {
   const symbols = {
     "wedding-fee": "350",
@@ -927,6 +994,7 @@ function chooseAnswer(answerIndex) {
 
   const current = cards[index];
   selectedReveal = {
+    answerIndex,
     label: current.answers[answerIndex]
   };
 

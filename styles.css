@@ -2223,6 +2223,79 @@ h1::first-line {
   }
 }
 
+/* Reveal states: the answer screen now shows whether Alina matched the answer. */
+.answer-poster {
+  position: relative;
+}
+
+.answer-poster--correct {
+  background:
+    radial-gradient(circle at 24% 28%, rgba(255, 255, 255, 0.28), transparent 7rem),
+    linear-gradient(105deg, #1f2a21 0 32%, #7aa06c 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster--partial {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.26), transparent 7rem),
+    linear-gradient(105deg, #2b2521 0 32%, #c79a55 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster--different {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.24), transparent 7rem),
+    linear-gradient(105deg, #231b1d 0 32%, #d84e75 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster--neutral {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.24), transparent 7rem),
+    linear-gradient(105deg, #231b1d 0 32%, #7b6a74 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster--correct .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #7aa06c, #1f2a21);
+}
+
+.answer-poster--partial .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #c79a55, #2b2521);
+}
+
+.answer-poster--different .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #d84e75, #231b1d);
+}
+
+.answer-poster--neutral .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #7b6a74, #231b1d);
+}
+
+.answer-poster--correct .poster-ribbon {
+  color: #fff;
+  background: #1f2a21;
+}
+
+.answer-poster--partial .poster-ribbon {
+  color: #fff;
+  background: #6d4f20;
+}
+
+.answer-poster--different .poster-ribbon {
+  color: #fff;
+  background: #8f3349;
+}
+
+.answer-poster--neutral .poster-ribbon {
+  color: #fff;
+  background: #231b1d;
+}
+
 /* Editorial redesign inspired by the provided pink beauty-layout references. */
 :root {
   --ink: #1f1a1b;
@@ -2912,4 +2985,53 @@ h2 {
   .song-poster .poster-title {
     margin-top: 138px;
   }
+}
+
+/* Final reveal-state layer. Keep this at the end so the state colors win. */
+.answer-poster.answer-poster--correct {
+  background:
+    radial-gradient(circle at 24% 28%, rgba(255, 255, 255, 0.28), transparent 7rem),
+    linear-gradient(105deg, #1f2a21 0 32%, #7aa06c 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster.answer-poster--partial {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.26), transparent 7rem),
+    linear-gradient(105deg, #2b2521 0 32%, #c79a55 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster.answer-poster--different {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.24), transparent 7rem),
+    linear-gradient(105deg, #231b1d 0 32%, #d84e75 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster.answer-poster--neutral {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.24), transparent 7rem),
+    linear-gradient(105deg, #231b1d 0 32%, #7b6a74 32% 45%, rgba(255, 255, 255, 0.96) 45% 100%);
+}
+
+.answer-poster.answer-poster--correct .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #7aa06c, #1f2a21);
+}
+
+.answer-poster.answer-poster--partial .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #c79a55, #2b2521);
+}
+
+.answer-poster.answer-poster--different .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #d84e75, #231b1d);
+}
+
+.answer-poster.answer-poster--neutral .answer-mark {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.28), transparent 3rem),
+    linear-gradient(135deg, #7b6a74, #231b1d);
 }
