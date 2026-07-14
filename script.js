@@ -790,38 +790,57 @@ function renderReveal() {
 function renderVisual(card, mode = "question") {
   if (mode === "reveal") {
     return `
-      <div class="answer-poster">
+      <div class="answer-poster editorial-poster">
+        <div class="poster-badge">${card.round}</div>
         <div class="answer-mark">OK</div>
         <div class="poster-title">${card.round === "Часть 1" ? "Правильный ответ" : card.round === "Часть 3" ? "Верный ответ" : "Ответ Арсения"}</div>
+        <div class="poster-ribbon">reveal moment</div>
       </div>
     `;
   }
 
   if (card.type === "question" && Array.isArray(card.answers)) {
     return `
-      <div class="options-poster">
+      <div class="options-poster editorial-poster">
+        <div class="poster-badge">${card.round}</div>
         <div class="options-title">${card.caption}</div>
         <div class="option-tiles">
           ${card.answers.map((answer) => `<span>${answer}</span>`).join("")}
         </div>
+        <div class="poster-ribbon">choose one</div>
       </div>
     `;
   }
 
   if (card.kind === "song") {
     return `
-      <div class="song-poster song-poster--${card.visual}">
+      <div class="song-poster song-poster--${card.visual} editorial-poster">
+        <div class="poster-badge">${card.round}</div>
         <div class="vinyl"></div>
         <div class="sound-bars"><span></span><span></span><span></span><span></span></div>
         <div class="poster-title">${card.caption}</div>
+        <div class="poster-ribbon">listen & guess</div>
+      </div>
+    `;
+  }
+
+  if (card.type === "intro" || card.type === "info" || card.type === "interview") {
+    return `
+      <div class="chapter-poster chapter-poster--${card.visual} editorial-poster">
+        <div class="poster-badge">${card.round}</div>
+        <div class="chapter-number">${card.round.replace("Часть ", "0")}</div>
+        <div class="poster-title">${card.caption}</div>
+        <div class="poster-ribbon">${card.type === "interview" ? "video story" : "chapter intro"}</div>
       </div>
     `;
   }
 
   return `
-    <div class="groom-poster groom-poster--${card.visual}">
+    <div class="groom-poster groom-poster--${card.visual} editorial-poster">
+      <div class="poster-badge">${card.round}</div>
       <div class="groom-symbol">${groomSymbol(card.visual)}</div>
       <div class="poster-title">${card.caption}</div>
+      <div class="poster-ribbon">bachelorette quiz</div>
     </div>
   `;
 }
@@ -835,7 +854,7 @@ function groomSymbol(type) {
     "wedding-tree": "ТРАД",
     "wedding-coat": "ШУБА",
     "wedding-date": "26",
-    "wedding-loaf": "КАР",
+    "wedding-loaf": "FACT",
     "groom-color": "GREEN",
     "groom-stars": "♊",
     "groom-eyes": "EYES",
