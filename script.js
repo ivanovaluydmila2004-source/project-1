@@ -1,5 +1,16 @@
 const cards = [
   {
+    type: "intro",
+    round: "Часть 1",
+    title: "Любовь, традиции и свадебные факты",
+    time: "Вводный экран",
+    kind: "groom",
+    visual: "wedding-loaf",
+    caption: "Часть 1",
+    text: "Сейчас тебя ждут вопросы о свадьбах, необычных традициях и интересных фактах. Выбери один вариант ответа: А, Б, В или Г. После каждого вопроса появится правильный ответ и короткое объяснение."
+  },
+  {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -7,11 +18,12 @@ const cards = [
     visual: "wedding-fee",
     caption: "Свадебный факт",
     text: "Каков размер государственной пошлины за государственную регистрацию заключения брака с выдачей свидетельства?",
-    answers: ["Регистрация проводится бесплатно", "350 рублей", "1 000 рублей", "5 000 рублей"],
+    answers: ["А. Регистрация проводится бесплатно", "Б. 350 рублей", "В. 1 000 рублей", "Г. 5 000 рублей"],
     correct: 1,
-    note: "Верный ответ: 350 рублей. Пошлина уплачивается за регистрацию заключения брака, включая выдачу свидетельства."
+    reveal: "Правильный ответ: Б. 350 рублей. Пошлина уплачивается за государственную регистрацию заключения брака, включая выдачу свидетельства."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -19,11 +31,12 @@ const cards = [
     visual: "wedding-zags",
     caption: "Свадебный факт",
     text: "Супруги согласны расторгнуть брак и не имеют общих несовершеннолетних детей. Каков размер государственной пошлины за регистрацию расторжения брака через органы ЗАГС?",
-    answers: ["350 рублей с пары", "1 000 рублей с каждого супруга", "5 000 рублей с каждого супруга", "10 000 рублей с пары"],
+    answers: ["А. 350 рублей с пары", "Б. 1 000 рублей с каждого супруга", "В. 5 000 рублей с каждого супруга", "Г. 10 000 рублей с пары"],
     correct: 2,
-    note: "Верный ответ: 5 000 рублей с каждого супруга. Вопрос касается регистрации расторжения брака через ЗАГС."
+    reveal: "Правильный ответ: В. 5 000 рублей с каждого супруга. Вопрос касается регистрации расторжения брака через органы ЗАГС."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -31,11 +44,12 @@ const cards = [
     visual: "wedding-calendar",
     caption: "Свадебный факт",
     text: "Через какое минимальное время после подачи заявления обычно проводится государственная регистрация заключения брака?",
-    answers: ["На следующий день", "Через семь дней", "По истечении месяца", "Через три месяца"],
+    answers: ["А. На следующий день", "Б. Через семь дней", "В. По истечении месяца", "Г. Через три месяца"],
     correct: 2,
-    note: "Верный ответ: по истечении месяца. При особых обстоятельствах срок может быть изменён."
+    reveal: "Правильный ответ: В. По истечении месяца. При наличии особых обстоятельств срок может быть изменён в установленном законом порядке."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -43,11 +57,12 @@ const cards = [
     visual: "wedding-veil",
     caption: "Свадебная традиция",
     text: "Что означал старинный свадебный обряд «повивание»?",
-    answers: ["Подружки заворачивали подарки невесты в один общий платок", "Молодожёнов накрывали одним покрывалом", "Невесте меняли девичью причёску и головной убор на замужние", "Руки жениха и невесты связывали полотенцем"],
+    answers: ["А. Подружки заворачивали подарки невесты в один общий платок", "Б. Молодожёнов накрывали одним покрывалом", "В. Невесте меняли девичью причёску и головной убор на замужние", "Г. Руки жениха и невесты связывали полотенцем"],
     correct: 2,
-    note: "Верный ответ: невесте меняли девичью причёску и головной убор на замужние."
+    reveal: "Правильный ответ: В. Невесте меняли девичью причёску и головной убор на замужние. Обряд символизировал переход девушки в статус замужней женщины."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -55,11 +70,12 @@ const cards = [
     visual: "wedding-tree",
     caption: "Свадебная традиция",
     text: "Что символизировала украшенная лентами и цветами ёлочка на традиционном девичнике в свадебном обряде села Репнино?",
-    answers: ["Благополучие семьи жениха", "Будущих детей молодожёнов", "Невестину красоту", "Долгую совместную жизнь"],
+    answers: ["А. Благополучие семьи жениха", "Б. Будущих детей молодожёнов", "В. Невестину красоту", "Г. Долгую совместную жизнь"],
     correct: 2,
-    note: "Верный ответ: невестину красоту. Украшенную ёлочку помещали в большой каравай."
+    reveal: "Правильный ответ: В. Невестину красоту. Украшенную ёлочку помещали в большой каравай как часть девичника."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -67,11 +83,12 @@ const cards = [
     visual: "wedding-coat",
     caption: "Свадебная традиция",
     text: "Что в одном из старинных свадебных обрядов должна была сделать невеста накануне девичника, чтобы защититься от нечистой силы?",
-    answers: ["Трижды обойти дом с зажжённой свечой", "Положить под подушку обручальное кольцо", "Посидеть на вывернутой мехом наружу шубе", "Заплести в волосы красную ленту"],
+    answers: ["А. Трижды обойти дом с зажжённой свечой", "Б. Положить под подушку обручальное кольцо", "В. Посидеть на вывернутой мехом наружу шубе", "Г. Заплести в волосы красную ленту"],
     correct: 2,
-    note: "Верный ответ: посидеть на вывернутой мехом наружу шубе."
+    reveal: "Правильный ответ: В. Посидеть на вывернутой мехом наружу шубе. Вывернутая шуба использовалась как защитный обрядовый предмет."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -79,11 +96,12 @@ const cards = [
     visual: "wedding-date",
     caption: "Свадебная дата",
     text: "Сколько пар планировали зарегистрировать брак в Иркутской области в красивую дату 26 июня 2026 года?",
-    answers: ["Около 170 пар", "Около 350 пар", "Почти 700 пар", "Более 1 200 пар"],
+    answers: ["А. Около 170 пар", "Б. Около 350 пар", "В. Почти 700 пар", "Г. Более 1 200 пар"],
     correct: 2,
-    note: "Верный ответ: почти 700 пар. Дата 26.06.2026 стала одной из самых востребованных дат года."
+    reveal: "Правильный ответ: В. Почти 700 пар. Дата 26.06.2026 стала одной из наиболее востребованных дат года."
   },
   {
+    type: "question",
     round: "Часть 1",
     title: "Любовь, традиции и свадебные факты",
     time: "2 минуты",
@@ -91,61 +109,76 @@ const cards = [
     visual: "wedding-loaf",
     caption: "Свадебная традиция",
     text: "Зачем в одном из русских свадебных обрядов связывали каравай со стороны жениха и каравай со стороны невесты?",
-    answers: ["Чтобы определить, чья семья богаче", "Чтобы символически соединить судьбы молодожёнов", "Чтобы выбрать главную сваху свадьбы", "Чтобы не перепутать караваи во время застолья"],
+    answers: ["А. Чтобы определить, чья семья богаче", "Б. Чтобы символически соединить судьбы молодожёнов", "В. Чтобы выбрать главную сваху свадьбы", "Г. Чтобы не перепутать караваи во время застолья"],
     correct: 1,
-    note: "Верный ответ: чтобы символически соединить судьбы молодожёнов."
+    reveal: "Правильный ответ: Б. Чтобы символически соединить судьбы молодожёнов. Два каравая ставили друг на друга и связывали верёвкой."
   },
   {
+    type: "intro",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
+    time: "Вводный экран",
+    kind: "groom",
+    visual: "groom-step",
+    caption: "Часть 2",
+    text: "Сеня заранее ответил на вопросы о себе, своих привычках и предпочтениях. Попробуй угадать его ответы. В некоторых вопросах нужно выбрать вариант, а в некоторых — назвать собственную версию."
+  },
+  {
+    type: "question",
+    round: "Часть 2",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-color",
     caption: "Ответ Арсения",
     text: "Какой твой любимый цвет?",
-    answers: ["Тёмно-синий", "Чёрный", "Зелёный", "Бордовый"],
+    answers: ["А. Тёмно-синий", "Б. Чёрный", "В. Зелёный", "Г. Бордовый"],
     correct: 2,
-    note: "Ответ Арсения: зелёный."
+    reveal: "Ответ Арсения: зелёный."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-stars",
     caption: "Ответ Арсения",
     text: "Какой у тебя знак зодиака?",
-    answers: ["Телец", "Близнецы", "Рак", "Лев"],
+    answers: ["А. Телец", "Б. Близнецы", "В. Рак", "Г. Лев"],
     correct: 1,
-    note: "Ответ Арсения: Близнецы."
+    reveal: "Ответ Арсения: Близнецы."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-eyes",
     caption: "Ответ Арсения",
     text: "Какой у тебя цвет глаз?",
-    answers: ["Серый", "Голубой", "Карий", "Зелёный"],
+    answers: ["А. Серый", "Б. Голубой", "В. Карий", "Г. Зелёный"],
     correct: 3,
-    note: "Ответ Арсения: зелёный."
+    reveal: "Ответ Арсения: зелёный."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-actor",
     caption: "Ответ Арсения",
     text: "Кто твой любимый актёр или актриса?",
-    answers: ["Мэттью Макконахи", "Кристиан Бэйл", "Вуди Харрельсон", "Джейсон Стэйтем"],
+    answers: ["А. Мэттью Макконахи", "Б. Кристиан Бэйл", "В. Вуди Харрельсон", "Г. Джейсон Стэйтем"],
     correct: 2,
-    note: "Ответ Арсения: Вуди Харрельсон."
+    reveal: "Ответ Арсения: Вуди Харрельсон."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "2 минуты",
     kind: "groom",
     visual: "groom-food",
@@ -154,23 +187,25 @@ const cards = [
     answers: ["2 балла", "1 балл", "0 баллов"],
     manualScores: [2, 1, 0],
     maxPoints: 2,
-    note: "Ответ Арсения: свинина в кисло-сладком соусе. 2 балла — точный ответ; 1 балл — мясо и кисло-сладкий соус без свинины; 0 баллов — другой ответ."
+    reveal: "Ответ Арсения: свинина в кисло-сладком соусе. 2 балла — точный ответ; 1 балл — мясо и кисло-сладкий соус без свинины; 0 баллов — другой ответ."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-child",
     caption: "Ответ Арсения",
     text: "Кем ты хотел стать, когда был ребёнком?",
-    answers: ["Архитектором", "Поваром", "Ветеринаром", "Пилотом"],
+    answers: ["А. Архитектором", "Б. Поваром", "В. Ветеринаром", "Г. Пилотом"],
     correct: 1,
-    note: "Ответ Арсения: поваром."
+    reveal: "Ответ Арсения: поваром."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "2 минуты",
     kind: "groom",
     visual: "groom-tattoo",
@@ -179,108 +214,117 @@ const cards = [
     answers: ["2 балла", "1 балл", "0 баллов"],
     manualScores: [2, 1, 0],
     maxPoints: 2,
-    note: "Ответ Арсения: какую-нибудь минималистичную абстракцию. 2 балла — минималистичная абстракция; 1 балл — минимализм или абстракция без второй части; 0 баллов — конкретное сюжетное изображение или другой ответ."
+    reveal: "Ответ Арсения: какую-нибудь минималистичную абстракцию. 2 балла — минималистичная абстракция; 1 балл — минимализм или абстракция без второй части; 0 баллов — конкретное сюжетное изображение или другой ответ."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-shoes",
     caption: "Вопрос-ловушка",
     text: "Какой у тебя размер обуви?",
-    answers: ["41", "41,5", "42", "42,5"],
+    answers: ["А. 41", "Б. 41,5", "В. 42", "Г. 42,5"],
     correct: 1,
-    note: "Ответ Арсения: 41,5."
+    reveal: "Ответ Арсения: 41,5."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-morning",
     caption: "Ответ Арсения",
     text: "Ты жаворонок или сова?",
-    answers: ["Жаворонок", "Сова"],
+    answers: ["А. Жаворонок", "Б. Сова"],
     correct: 0,
-    note: "Ответ Арсения: жаворонок."
+    reveal: "Ответ Арсения: жаворонок."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-allergy",
     caption: "Ответ Арсения",
     text: "На что у тебя аллергия?",
-    answers: ["На шерсть животных", "На пыльцу", "На цитрусовые", "Аллергии нет"],
+    answers: ["А. На шерсть животных", "Б. На пыльцу", "В. На цитрусовые", "Г. Аллергии нет"],
     correct: 3,
-    note: "Ответ Арсения: аллергии нет."
+    reveal: "Ответ Арсения: аллергии нет."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-sweet",
     caption: "Ответ Арсения",
     text: "Какая твоя любимая сладость?",
-    answers: ["Овсяные печеньки", "Чизкейк", "Мармелад", "Тёмный шоколад"],
+    answers: ["А. Овсяные печеньки", "Б. Чизкейк", "В. Мармелад", "Г. Тёмный шоколад"],
     correct: 0,
-    note: "Ответ Арсения: овсяные печеньки."
+    reveal: "Ответ Арсения: овсяные печеньки."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-holiday",
     caption: "Ответ Арсения",
     text: "Какой у тебя любимый праздник?",
-    answers: ["День рождения", "Новый год", "Майские праздники", "День защитника Отечества"],
+    answers: ["А. День рождения", "Б. Новый год", "В. Майские праздники", "Г. День защитника Отечества"],
     correct: 1,
-    note: "Ответ Арсения: Новый год."
+    reveal: "Ответ Арсения: Новый год."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-country",
     caption: "Ответ Арсения",
     text: "В какую страну ты бы переехал, если бы была возможность?",
-    answers: ["Португалия", "Испания", "Италия", "Греция"],
+    answers: ["А. Португалия", "Б. Испания", "В. Италия", "Г. Греция"],
     correct: 1,
-    note: "Ответ Арсения: Испания."
+    reveal: "Ответ Арсения: Испания."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-step",
     caption: "Ответ Арсения",
     text: "Кто из вас сделал первый шаг в отношениях?",
-    answers: ["Алина", "Арсений"],
+    answers: ["А. Алина", "Б. Арсений"],
     correct: 1,
-    note: "Ответ Арсения: я, Арсений."
+    reveal: "Ответ Арсения: я, Арсений."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-fate",
     caption: "Прогноз без баллов",
     text: "Ты веришь в судьбу или считаешь, что всё зависит от самого человека?",
-    answers: ["Верю в судьбу", "Считаю, что всё зависит от самого человека"],
+    answers: ["А. Верю в судьбу", "Б. Считаю, что всё зависит от самого человека"],
     correct: null,
     maxPoints: 0,
-    note: "Ответ Арсения пока не указан. Вопрос показан как прогноз и не входит в общий подсчёт."
+    reveal: "Ответ Арсения необходимо дополнить. Сейчас этот вопрос показан как прогноз и не входит в общий подсчёт."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "2 минуты",
     kind: "groom",
     visual: "groom-money",
@@ -289,31 +333,163 @@ const cards = [
     answers: ["2 балла", "1 балл", "0 баллов"],
     manualScores: [2, 1, 0],
     maxPoints: 2,
-    note: "Ответ Арсения: на люксовые оверпрайс-вещи. 2 балла — люксовые вещи с неоправданной переплатой за бренд; 1 балл — дорогие брендовые или люксовые вещи; 0 баллов — другой ответ."
+    reveal: "Ответ Арсения: на люксовые оверпрайс-вещи. 2 балла — люксовые вещи с неоправданной переплатой за бренд; 1 балл — дорогие брендовые или люксовые вещи; 0 баллов — другой ответ."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-emoji",
     caption: "Визуальный выбор",
     text: "Какой смайлик ты чаще всего используешь в переписке со мной или с близкими?",
-    answers: ["😂", "👍", "❤", "😘"],
+    answers: ["А. 😂", "Б. 👍", "В. ❤", "Г. 😘"],
     correct: 2,
-    note: "Ответ Арсения: ❤."
+    reveal: "Ответ Арсения: ❤."
   },
   {
+    type: "question",
     round: "Часть 2",
-    title: "Что ответил Сеня?",
+    title: "Что ответил Арсений?",
     time: "1 минута",
     kind: "groom",
     visual: "groom-rest",
     caption: "Ответ Арсения",
     text: "Какой вид отдыха ты бы выбрал: пляж, город или горы?",
-    answers: ["Пляж", "Город", "Горы"],
+    answers: ["А. Пляж", "Б. Город", "В. Горы"],
     correct: 0,
-    note: "Ответ Арсения: пляж."
+    reveal: "Ответ Арсения: пляж."
+  },
+  {
+    type: "intro",
+    round: "Часть 3",
+    title: "Музыкальная загадка",
+    time: "Вводный экран",
+    kind: "song",
+    visual: "music",
+    caption: "Часть 3",
+    text: "Сейчас будут звучать короткие фрагменты песен. Твоя задача — угадать название композиции, исполнителя или оба ответа."
+  },
+  {
+    type: "info",
+    round: "Часть 3",
+    title: "Музыкальная загадка",
+    time: "Плейлист отдельно",
+    kind: "song",
+    visual: "playlist",
+    caption: "Плейлист будет добавлен отдельно",
+    text: "Музыкальные задания появятся здесь после того, как будет готов плейлист. Песни Алины и Арсения не придуманы заранее."
+  },
+  {
+    type: "intro",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Вводный экран",
+    kind: "groom",
+    visual: "story",
+    caption: "Часть 4",
+    text: "Сейчас мы запишем твои ответы на вопросы о вашей с Сеней истории. Сеня ответит на такие же вопросы отдельно, а ваши ответы соединят в одном видео. Отвечай сразу и своими словами — здесь нет правильных или неправильных ответов."
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Что ты подумал или подумала об Алине или Арсении после вашего первого знакомства?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Что тебе больше всего запомнилось в нём или в ней при первой встрече?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "После какого момента ты понял или поняла, что хочешь продолжить общение?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Какое ваше свидание или совместный день ты вспоминаешь чаще всего?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "В какой момент ты впервые почувствовал или почувствовала, что вы стали настоящей парой?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Какие три качества ты больше всего ценишь в Алине или Арсении?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Какая привычка Алины или Арсения всегда вызывает у тебя улыбку?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Какая ваша совместная традиция или привычка тебе нравится больше всего?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Какая привычка или выходка Пумы всегда заставляет вас обоих улыбаться?"
+  },
+  {
+    type: "interview",
+    round: "Часть 4",
+    title: "Две версии одной истории",
+    time: "Видеоответ",
+    kind: "groom",
+    visual: "story",
+    caption: "Вопрос для Алины и Арсения",
+    text: "Что из ваших отношений ты обязательно хочешь сохранить после свадьбы на долгие годы?"
   }
 ];
 
@@ -344,15 +520,13 @@ const petSteps = [
 const scoredCards = cards.reduce((total, card) => {
   if (typeof card.maxPoints === "number") return total + card.maxPoints;
   if (card.manualScores) return total + Math.max(...card.manualScores);
-  return total + (card.correct === null ? 0 : 1);
+  return total + (card.type === "question" && card.correct !== null ? 1 : 0);
 }, 0);
 
 const screens = document.querySelectorAll(".screen");
 const startButton = document.querySelector("[data-start]");
 const restartButton = document.querySelector("[data-restart]");
 const nextButton = document.querySelector("[data-next]");
-const hostToggle = document.querySelector("[data-host-toggle]");
-const hostPanel = document.querySelector("[data-host-panel]");
 
 const roundLabel = document.querySelector("[data-round-label]");
 const questionTitle = document.querySelector("[data-question-title]");
@@ -372,7 +546,8 @@ const petLevel = document.querySelector("[data-pet-level]");
 
 let index = 0;
 let score = 0;
-let answered = false;
+let awaitingReveal = false;
+let selectedReveal = null;
 
 function showScreen(name) {
   screens.forEach((screen) => {
@@ -382,7 +557,8 @@ function showScreen(name) {
 
 function renderQuestion() {
   const current = cards[index];
-  answered = false;
+  awaitingReveal = false;
+  selectedReveal = null;
 
   roundLabel.textContent = current.round;
   questionTitle.textContent = current.title;
@@ -392,26 +568,54 @@ function renderQuestion() {
   timing.textContent = current.time;
   questionText.textContent = current.text;
   feedback.textContent = "";
-  nextButton.disabled = true;
-  questionCard.classList.toggle("pause-card", current.correct === null && !current.manualScores);
+  nextButton.disabled = current.type === "question";
+  nextButton.textContent = index + 1 >= cards.length ? "Финал" : "Дальше";
+
+  questionCard.classList.toggle("pause-card", current.type === "intro" || current.type === "info" || current.type === "interview");
   questionCard.classList.toggle("song-card", current.kind === "song");
+  questionCard.classList.remove("reveal-card");
 
   visual.innerHTML = renderVisual(current);
   visual.classList.remove("is-flipping");
   window.requestAnimationFrame(() => visual.classList.add("is-flipping"));
   answers.innerHTML = "";
 
-  current.answers.forEach((answer, answerIndex) => {
-    const button = document.createElement("button");
-    button.className = "answer";
-    button.type = "button";
-    button.textContent = answer;
-    button.style.setProperty("--answer-delay", `${answerIndex * 70}ms`);
-    button.addEventListener("click", () => chooseAnswer(answerIndex));
-    answers.append(button);
-  });
+  if (current.type === "question") {
+    current.answers.forEach((answer, answerIndex) => {
+      const button = document.createElement("button");
+      button.className = "answer";
+      button.type = "button";
+      button.textContent = answer;
+      button.style.setProperty("--answer-delay", `${answerIndex * 70}ms`);
+      button.addEventListener("click", () => chooseAnswer(answerIndex));
+      answers.append(button);
+    });
+  }
 
   updatePet();
+}
+
+function renderReveal() {
+  const current = cards[index];
+  const earned = selectedReveal?.earnedPoints || 0;
+
+  awaitingReveal = true;
+  roundLabel.textContent = current.round;
+  questionTitle.textContent = current.title;
+  timing.textContent = "Экран ответа";
+  questionText.textContent = current.reveal;
+  feedback.textContent = selectedReveal?.label ? `Выбрано: ${selectedReveal.label}. Баллы: ${earned}.` : "";
+  answers.innerHTML = "";
+  nextButton.disabled = false;
+  nextButton.textContent = index + 1 >= cards.length ? "Финал" : "Дальше";
+  questionCard.classList.add("reveal-card");
+
+  visual.innerHTML = renderVisual({
+    ...current,
+    caption: current.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения"
+  });
+  visual.classList.remove("is-flipping");
+  window.requestAnimationFrame(() => visual.classList.add("is-flipping"));
 }
 
 function renderVisual(card) {
@@ -425,21 +629,10 @@ function renderVisual(card) {
     `;
   }
 
-  if (card.kind === "groom") {
-    return `
-      <div class="groom-poster groom-poster--${card.visual}">
-        <div class="groom-symbol">${groomSymbol(card.visual)}</div>
-        <div class="poster-title">${card.caption}</div>
-      </div>
-    `;
-  }
-
   return `
-    <div class="meme-poster meme-poster--${card.visual}">
-      <div class="meme-art">
-        ${memeArt(card.visual)}
-      </div>
-      <div class="meme-caption">${card.caption}</div>
+    <div class="groom-poster groom-poster--${card.visual}">
+      <div class="groom-symbol">${groomSymbol(card.visual)}</div>
+      <div class="poster-title">${card.caption}</div>
     </div>
   `;
 }
@@ -471,69 +664,43 @@ function groomSymbol(type) {
     "groom-fate": "🔮",
     "groom-money": "💸",
     "groom-emoji": "❤",
-    "groom-rest": "🏖️"
+    "groom-rest": "🏖️",
+    music: "🎧",
+    playlist: "🎵",
+    story: "🎥"
   };
 
-  return symbols[type] || "🤵";
-}
-
-function memeArt(type) {
-  const art = {
-    natasha: '<span class="meme-moon"></span><span class="cat cat-a"></span><span class="cat cat-b"></span><span class="sleepy-person"></span>',
-    "cats-night": '<span class="meme-moon"></span><span class="cat cat-a"></span><span class="cat cat-b"></span><span class="cat cat-c"></span>',
-    zhdun: '<span class="zhdun-body"></span><span class="zhdun-head"></span><span class="zhdun-nose"></span>',
-    nichosi: '<span class="wow-face"></span><span class="spark spark-a"></span><span class="spark spark-b"></span>',
-    battle: '<span class="mic"></span><span class="speech speech-a"></span><span class="speech speech-b"></span>',
-    coincidence: '<span class="detective"></span><span class="magnifier"></span><span class="question-mark">?</span>',
-    shikarno: '<span class="phone"></span><span class="heart-pop"></span><span class="cool-face"></span>',
-    artist: '<span class="paint-palette"></span><span class="brush"></span><span class="crown-doodle"></span>',
-    budget: '<span class="receipt"></span><span class="coin coin-a"></span><span class="coin coin-b"></span>',
-    cake: '<span class="cake"></span><span class="eyes"></span>',
-    photo: '<span class="camera"></span><span class="flash"></span><span class="heart-pop"></span>',
-    "photo-detective": '<span class="photo-frame"></span><span class="magnifier"></span>',
-    karaoke: '<span class="mic"></span><span class="note note-a"></span><span class="note note-b"></span>',
-    toast: '<span class="glass glass-a"></span><span class="glass glass-b"></span>'
-  };
-
-  return art[type] || '<span class="heart-pop"></span>';
+  return symbols[type] || "💗";
 }
 
 function chooseAnswer(answerIndex) {
-  if (answered) return;
-  answered = true;
+  if (awaitingReveal) return;
 
   const current = cards[index];
-  const buttons = [...answers.querySelectorAll(".answer")];
   const isManual = Array.isArray(current.manualScores);
-  const isPause = current.correct === null && !isManual;
-  const earnedPoints = isManual ? current.manualScores[answerIndex] : 0;
-  const isCorrect = isPause || isManual || answerIndex === current.correct;
+  const earnedPoints = isManual
+    ? current.manualScores[answerIndex]
+    : current.correct === null
+      ? 0
+      : answerIndex === current.correct
+        ? 1
+        : 0;
 
-  if (isManual) {
-    score += earnedPoints;
-  } else if (!isPause && isCorrect) {
-    score += 1;
-  }
+  score += earnedPoints;
+  selectedReveal = {
+    earnedPoints,
+    label: current.answers[answerIndex]
+  };
 
-  if ((isManual && earnedPoints > 0) || (!isPause && isCorrect)) {
+  if (earnedPoints > 0) {
     updatePet(true);
     burstConfetti(12);
     questionCard.classList.add("is-correct-pop");
     window.setTimeout(() => questionCard.classList.remove("is-correct-pop"), 700);
   }
 
-  buttons.forEach((button, buttonIndex) => {
-    button.disabled = true;
-    if (isPause && buttonIndex === answerIndex) button.classList.add("is-correct");
-    if (isManual && buttonIndex === answerIndex && earnedPoints > 0) button.classList.add("is-correct");
-    if (isManual && buttonIndex === answerIndex && earnedPoints === 0) button.classList.add("is-wrong");
-    if (!isManual && !isPause && buttonIndex === current.correct) button.classList.add("is-correct");
-    if (!isManual && !isPause && buttonIndex === answerIndex && !isCorrect) button.classList.add("is-wrong");
-  });
-
   scoreLabel.textContent = score;
-  feedback.textContent = current.note;
-  nextButton.disabled = false;
+  renderReveal();
 }
 
 function updatePet(celebrate = false) {
@@ -590,11 +757,6 @@ nextButton.addEventListener("click", () => {
 restartButton.addEventListener("click", () => {
   index = 0;
   score = 0;
-  hostPanel.hidden = true;
   renderQuestion();
   showScreen("quiz");
-});
-
-hostToggle.addEventListener("click", () => {
-  hostPanel.hidden = !hostPanel.hidden;
 });
