@@ -791,9 +791,14 @@ function renderVisual(card, mode = "question") {
     return `
       <div class="answer-poster answer-poster--${revealMeta.state} editorial-poster">
         <div class="poster-badge">${card.round}</div>
-        <div class="answer-mark">${revealMeta.mark}</div>
-        <div class="poster-title">${revealMeta.title}</div>
-        <div class="poster-ribbon">${revealMeta.ribbon}</div>
+        <div class="answer-status">
+          <span>${revealMeta.mark}</span>
+          <strong>${revealMeta.ribbon}</strong>
+        </div>
+        <div class="answer-summary">
+          <span>${revealMeta.eyebrow}</span>
+          <strong>${revealMeta.title}</strong>
+        </div>
       </div>
     `;
   }
@@ -894,7 +899,8 @@ function getRevealMeta(card) {
       heading: "Верный ответ",
       title: "Верный ответ",
       mark: "♪",
-      ribbon: "музыкальная разгадка"
+      eyebrow: "Музыкальная загадка",
+      ribbon: "разгадка"
     };
   }
 
@@ -903,8 +909,9 @@ function getRevealMeta(card) {
       state,
       heading: card.round === "Часть 1" ? "Верно" : "Совпало",
       title: card.round === "Часть 1" ? "Верно" : "Совпало",
-      mark: "ДА",
-      ribbon: "ответ совпал"
+      mark: "✓",
+      eyebrow: "Ответ Алины",
+      ribbon: "совпало"
     };
   }
 
@@ -914,7 +921,8 @@ function getRevealMeta(card) {
       heading: "Почти совпало",
       title: "Почти совпало",
       mark: "≈",
-      ribbon: "близкая версия"
+      eyebrow: "Ответ Алины",
+      ribbon: "близко"
     };
   }
 
@@ -924,7 +932,8 @@ function getRevealMeta(card) {
       heading: card.round === "Часть 1" ? "Правильный ответ" : "Ответ отличается",
       title: card.round === "Часть 1" ? "Правильный ответ" : "Ответ отличается",
       mark: "→",
-      ribbon: card.round === "Часть 1" ? "смотрим ответ" : "новая деталь"
+      eyebrow: "Ответ Алины",
+      ribbon: card.round === "Часть 1" ? "смотрим" : "иначе"
     };
   }
 
@@ -933,7 +942,8 @@ function getRevealMeta(card) {
     heading: card.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения",
     title: card.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения",
     mark: "OK",
-    ribbon: "экран ответа"
+    eyebrow: "Экран ответа",
+    ribbon: "ответ"
   };
 }
 
