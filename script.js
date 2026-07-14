@@ -97,147 +97,223 @@ const cards = [
   },
   {
     round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "wedding",
-    caption: "Фрагмент: «Ах, эта свадьба, свадьба, свадьба пела и плясала...»",
-    text: "Какая это песня и исполнитель?",
-    answers: ["Муслим Магомаев — Свадьба", "Валерий Меладзе — Красиво", "Дима Билан — Держи", "Градусы — Невеста"],
-    correct: 0,
-    note: "Самая узнаваемая свадебная классика для общего подпевания."
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-color",
+    caption: "Ответ Арсения",
+    text: "Какой твой любимый цвет?",
+    answers: ["Тёмно-синий", "Чёрный", "Зелёный", "Бордовый"],
+    correct: 2,
+    note: "Ответ Арсения: зелёный."
   },
   {
     round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "ring-song",
-    caption: "Фрагмент: «Обручальное кольцо - не простое украшенье...»",
-    text: "Кто исполняет эту песню?",
-    answers: ["Лейся, песня — Обручальное кольцо", "Иванушки International — Тучи", "А-Студио — Улетаю", "Браво — Любите, девушки"],
-    correct: 0,
-    note: "Песня прямо создана для свадебного момента."
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-stars",
+    caption: "Ответ Арсения",
+    text: "Какой у тебя знак зодиака?",
+    answers: ["Телец", "Близнецы", "Рак", "Лев"],
+    correct: 1,
+    note: "Ответ Арсения: Близнецы."
   },
   {
     round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "bride-song",
-    caption: "Фрагмент: «Ты сегодня невеста, ты сегодня красивая...»",
-    text: "Что это за трек?",
-    answers: ["Градусы — Невеста", "Руки Вверх! — 18 мне уже", "Artik & Asti — Неделимы", "Звери — До скорой встречи"],
-    correct: 0,
-    note: "Современная карточка специально для невесты."
-  },
-  {
-    round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "forever",
-    caption: "Фрагмент: «Вместе и навсегда, рядом с тобой...»",
-    text: "Выбери правильный вариант.",
-    answers: ["Алсу — Вместе и навсегда", "МакSим — Знаешь ли ты", "Serebro — Мама Люба", "IOWA — Улыбайся"],
-    correct: 0,
-    note: "Очень свадебное настроение: мягко, светло и навсегда."
-  },
-  {
-    round: "Пауза ведущей",
-    title: "Музыкальный припев",
-    time: "4 минуты",
-    kind: "pause",
-    visual: "karaoke",
-    caption: "Гости выбирают песню, которую точно включили бы паре",
-    text: "Мини-задание: каждая команда называет один трек для первого семейного плейлиста.",
-    answers: ["Лиричная", "Танцевальная", "Смешная", "Та самая"],
-    correct: null,
-    note: "Можно включить 15 секунд победившего трека."
-  },
-  {
-    round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "love-hit",
-    caption: "Фрагмент: «Я буду любить тебя просто...»",
-    text: "Какая песня звучит по смыслу?",
-    answers: ["Дима Билан — Я просто люблю тебя", "Нюша — Выше", "Баста — Выпускной", "Ёлка — Прованс"],
-    correct: 0,
-    note: "Хороший вариант для романтичной паузы."
-  },
-  {
-    round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "hands",
-    caption: "Фрагмент: «Я поднимаю руки, хочу тебе сдаться...»",
-    text: "Кто исполнитель?",
-    answers: ["Григорий Лепс — Я поднимаю руки", "Мот — Капкан", "Би-2 — Мой рок-н-ролл", "Uma2rman — Проститься"],
-    correct: 0,
-    note: "Не строго свадебная, зато отлично работает на танцпол."
-  },
-  {
-    round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "kiss",
-    caption: "Фрагмент: «Он тебя целует, говорит, что любит...»",
-    text: "Какая группа это поет?",
-    answers: ["Руки Вверх! — Он тебя целует", "Дискотека Авария — Небо", "Hi-Fi — Не дано", "Корни — Ты узнаешь ее"],
-    correct: 0,
-    note: "Для веселой части вечера и ностальгического смеха."
-  },
-  {
-    round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "heart",
-    caption: "Фрагмент: «Любовь настала, значит, все сбылось...»",
-    text: "Выбери правильный ответ.",
-    answers: ["Роза Рымбаева — Любовь настала", "Полина Гагарина — Спектакль окончен", "Винтаж — Ева", "Чай вдвоем — День рождения"],
-    correct: 0,
-    note: "Очень нежная классика для романтичного финала блока."
-  },
-  {
-    round: "Часть 2",
-    title: "Угадай песню",
-    time: "2 минуты",
-    kind: "song",
-    visual: "dance",
-    caption: "Фрагмент: «Самая, самая, ты самая красивая...»",
-    text: "Кто исполнитель?",
-    answers: ["Егор Крид — Самая Самая", "Мот — Сопрано", "JONY — Комета", "Ханна — Омар Хайям"],
-    correct: 0,
-    note: "Для невесты эта карточка звучит особенно правильно."
-  },
-  {
-    round: "Пауза ведущей",
-    title: "Тост на одно слово",
-    time: "4 минуты",
-    kind: "pause",
-    visual: "toast",
-    caption: "Каждая гостья выбирает одно слово для будущей семьи",
-    text: "Мини-задание: назвать слово-пожелание и коротко объяснить его.",
-    answers: ["Любовь", "Дом", "Смех", "Навсегда"],
-    correct: null,
-    note: "Эта пауза красиво закрывает квиз перед финалом."
-  },
-  {
-    round: "Финал",
-    title: "Финальный тост",
-    time: "2 минуты",
-    kind: "song",
-    visual: "finale",
-    caption: "Финальный припев вечера",
-    text: "Главная победа сегодня не в баллах, а в том, что у этой истории будет свадьба.",
-    answers: ["Правда", "Абсолютная правда", "Самая правда", "Все ответы верные"],
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-eyes",
+    caption: "Ответ Арсения",
+    text: "Какой у тебя цвет глаз?",
+    answers: ["Серый", "Голубой", "Карий", "Зелёный"],
     correct: 3,
-    note: "Финал мягкий: все дороги ведут к любви."
+    note: "Ответ Арсения: зелёный."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-actor",
+    caption: "Ответ Арсения",
+    text: "Кто твой любимый актёр или актриса?",
+    answers: ["Мэттью Макконахи", "Кристиан Бэйл", "Вуди Харрельсон", "Джейсон Стэйтем"],
+    correct: 2,
+    note: "Ответ Арсения: Вуди Харрельсон."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "2 минуты",
+    kind: "groom",
+    visual: "groom-food",
+    caption: "Открытый ответ",
+    text: "Какая твоя любимая еда?",
+    answers: ["2 балла", "1 балл", "0 баллов"],
+    manualScores: [2, 1, 0],
+    maxPoints: 2,
+    note: "Ответ Арсения: свинина в кисло-сладком соусе. 2 балла — точный ответ; 1 балл — мясо и кисло-сладкий соус без свинины; 0 баллов — другой ответ."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-child",
+    caption: "Ответ Арсения",
+    text: "Кем ты хотел стать, когда был ребёнком?",
+    answers: ["Архитектором", "Поваром", "Ветеринаром", "Пилотом"],
+    correct: 1,
+    note: "Ответ Арсения: поваром."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "2 минуты",
+    kind: "groom",
+    visual: "groom-tattoo",
+    caption: "Открытый ответ",
+    text: "Если бы ты решился на татуировку, что бы ты набил?",
+    answers: ["2 балла", "1 балл", "0 баллов"],
+    manualScores: [2, 1, 0],
+    maxPoints: 2,
+    note: "Ответ Арсения: какую-нибудь минималистичную абстракцию. 2 балла — минималистичная абстракция; 1 балл — минимализм или абстракция без второй части; 0 баллов — конкретное сюжетное изображение или другой ответ."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-shoes",
+    caption: "Вопрос-ловушка",
+    text: "Какой у тебя размер обуви?",
+    answers: ["41", "41,5", "42", "42,5"],
+    correct: 1,
+    note: "Ответ Арсения: 41,5."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-morning",
+    caption: "Ответ Арсения",
+    text: "Ты жаворонок или сова?",
+    answers: ["Жаворонок", "Сова"],
+    correct: 0,
+    note: "Ответ Арсения: жаворонок."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-allergy",
+    caption: "Ответ Арсения",
+    text: "На что у тебя аллергия?",
+    answers: ["На шерсть животных", "На пыльцу", "На цитрусовые", "Аллергии нет"],
+    correct: 3,
+    note: "Ответ Арсения: аллергии нет."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-sweet",
+    caption: "Ответ Арсения",
+    text: "Какая твоя любимая сладость?",
+    answers: ["Овсяные печеньки", "Чизкейк", "Мармелад", "Тёмный шоколад"],
+    correct: 0,
+    note: "Ответ Арсения: овсяные печеньки."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-holiday",
+    caption: "Ответ Арсения",
+    text: "Какой у тебя любимый праздник?",
+    answers: ["День рождения", "Новый год", "Майские праздники", "День защитника Отечества"],
+    correct: 1,
+    note: "Ответ Арсения: Новый год."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-country",
+    caption: "Ответ Арсения",
+    text: "В какую страну ты бы переехал, если бы была возможность?",
+    answers: ["Португалия", "Испания", "Италия", "Греция"],
+    correct: 1,
+    note: "Ответ Арсения: Испания."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-step",
+    caption: "Ответ Арсения",
+    text: "Кто из вас сделал первый шаг в отношениях?",
+    answers: ["Алина", "Арсений"],
+    correct: 1,
+    note: "Ответ Арсения: я, Арсений."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-fate",
+    caption: "Прогноз без баллов",
+    text: "Ты веришь в судьбу или считаешь, что всё зависит от самого человека?",
+    answers: ["Верю в судьбу", "Считаю, что всё зависит от самого человека"],
+    correct: null,
+    maxPoints: 0,
+    note: "Ответ Арсения пока не указан. Вопрос показан как прогноз и не входит в общий подсчёт."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "2 минуты",
+    kind: "groom",
+    visual: "groom-money",
+    caption: "Открытый ответ",
+    text: "На что ты бы никогда не потратил деньги, хотя другие делают это постоянно?",
+    answers: ["2 балла", "1 балл", "0 баллов"],
+    manualScores: [2, 1, 0],
+    maxPoints: 2,
+    note: "Ответ Арсения: на люксовые оверпрайс-вещи. 2 балла — люксовые вещи с неоправданной переплатой за бренд; 1 балл — дорогие брендовые или люксовые вещи; 0 баллов — другой ответ."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-emoji",
+    caption: "Визуальный выбор",
+    text: "Какой смайлик ты чаще всего используешь в переписке со мной или с близкими?",
+    answers: ["😂", "👍", "❤", "😘"],
+    correct: 2,
+    note: "Ответ Арсения: ❤."
+  },
+  {
+    round: "Часть 2",
+    title: "Что ответил Сеня?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-rest",
+    caption: "Ответ Арсения",
+    text: "Какой вид отдыха ты бы выбрал: пляж, город или горы?",
+    answers: ["Пляж", "Город", "Горы"],
+    correct: 0,
+    note: "Ответ Арсения: пляж."
   }
 ];
 
@@ -265,7 +341,11 @@ const petSteps = [
   "Котенок королевы вечера"
 ];
 
-const scoredCards = cards.filter((card) => card.correct !== null).length;
+const scoredCards = cards.reduce((total, card) => {
+  if (typeof card.maxPoints === "number") return total + card.maxPoints;
+  if (card.manualScores) return total + Math.max(...card.manualScores);
+  return total + (card.correct === null ? 0 : 1);
+}, 0);
 
 const screens = document.querySelectorAll(".screen");
 const startButton = document.querySelector("[data-start]");
@@ -313,7 +393,7 @@ function renderQuestion() {
   questionText.textContent = current.text;
   feedback.textContent = "";
   nextButton.disabled = true;
-  questionCard.classList.toggle("pause-card", current.correct === null);
+  questionCard.classList.toggle("pause-card", current.correct === null && !current.manualScores);
   questionCard.classList.toggle("song-card", current.kind === "song");
 
   visual.innerHTML = renderVisual(current);
@@ -424,11 +504,18 @@ function chooseAnswer(answerIndex) {
 
   const current = cards[index];
   const buttons = [...answers.querySelectorAll(".answer")];
-  const isPause = current.correct === null;
-  const isCorrect = isPause || answerIndex === current.correct;
+  const isManual = Array.isArray(current.manualScores);
+  const isPause = current.correct === null && !isManual;
+  const earnedPoints = isManual ? current.manualScores[answerIndex] : 0;
+  const isCorrect = isPause || isManual || answerIndex === current.correct;
 
-  if (!isPause && isCorrect) {
+  if (isManual) {
+    score += earnedPoints;
+  } else if (!isPause && isCorrect) {
     score += 1;
+  }
+
+  if ((isManual && earnedPoints > 0) || (!isPause && isCorrect)) {
     updatePet(true);
     burstConfetti(12);
     questionCard.classList.add("is-correct-pop");
@@ -438,8 +525,10 @@ function chooseAnswer(answerIndex) {
   buttons.forEach((button, buttonIndex) => {
     button.disabled = true;
     if (isPause && buttonIndex === answerIndex) button.classList.add("is-correct");
-    if (!isPause && buttonIndex === current.correct) button.classList.add("is-correct");
-    if (!isPause && buttonIndex === answerIndex && !isCorrect) button.classList.add("is-wrong");
+    if (isManual && buttonIndex === answerIndex && earnedPoints > 0) button.classList.add("is-correct");
+    if (isManual && buttonIndex === answerIndex && earnedPoints === 0) button.classList.add("is-wrong");
+    if (!isManual && !isPause && buttonIndex === current.correct) button.classList.add("is-correct");
+    if (!isManual && !isPause && buttonIndex === answerIndex && !isCorrect) button.classList.add("is-wrong");
   });
 
   scoreLabel.textContent = score;
