@@ -1145,6 +1145,7 @@ h3 {
   margin: 0;
   font-size: clamp(22px, 3vw, 32px);
   line-height: 1.24;
+  white-space: pre-line;
 }
 
 .answers {
@@ -1190,6 +1191,37 @@ h3 {
 
 .answer:disabled {
   cursor: default;
+}
+
+.music-task-card .answers {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.audio-play {
+  min-height: 72px;
+  padding: 16px 18px;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(157, 68, 84, 0.98), rgba(201, 121, 130, 0.92)),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.42), transparent 36%);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 16px 36px rgba(157, 68, 84, 0.22);
+  font-family: inherit;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.audio-play::before {
+  content: "▶ ";
+}
+
+.audio-play:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(157, 68, 84, 0.26);
+  filter: saturate(1.05);
 }
 
 .feedback {

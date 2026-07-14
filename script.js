@@ -362,17 +362,217 @@ const cards = [
     kind: "song",
     visual: "music",
     caption: "Часть 3",
-    text: "Сейчас будут звучать короткие фрагменты песен. Твоя задача — угадать название композиции, исполнителя или оба ответа."
+    text: "Сейчас будут звучать минусы знакомых песен. Прослушай фрагмент и назови композицию без вариантов ответа. После твоего ответа на экране появятся правильное название и исполнитель."
   },
   {
-    type: "info",
+    type: "music-task",
     round: "Часть 3",
-    title: "Музыкальная загадка",
-    time: "Плейлист отдельно",
+    title: "Музыкальная загадка № 1",
+    time: "Минус № 1",
     kind: "song",
-    visual: "playlist",
-    caption: "Плейлист будет добавлен отдельно",
-    text: "Музыкальные задания появятся здесь после того, как будет готов плейлист. Песни Алины и Арсения не придуманы заранее."
+    visual: "music",
+    caption: "Музыкальная загадка № 1",
+    audio: "./assets/audio/music-1.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 1",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Невеста»\nЕгор Крид"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 2",
+    time: "Минус № 2",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 2",
+    audio: "./assets/audio/music-2.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 2",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Невеста»\nГлюк’oZa"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 3",
+    time: "Минус № 3",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 3",
+    audio: "./assets/audio/music-3.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 3",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«I Got Love»\nMiyagi & Эндшпиль feat. Рем Дигга"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 4",
+    time: "Минус № 4",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 4",
+    audio: "./assets/audio/music-4.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 4",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Люблю»\nМария Чайковская feat. Евгений Соя"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 5",
+    time: "Минус № 5",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 5",
+    audio: "./assets/audio/music-5.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 5",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Светлое чувство»\nSettlers"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 6",
+    time: "Минус № 6",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 6",
+    audio: "./assets/audio/music-6.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 6",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Ах эта свадьба»\nВерка Сердючка"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 7",
+    time: "Минус № 7",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 7",
+    audio: "./assets/audio/music-7.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 7",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Потеряла голову»\nХанна"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 8",
+    time: "Минус № 8",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 8",
+    audio: "./assets/audio/music-8.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 8",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Белое платье»\nЧай вдвоём"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 9",
+    time: "Минус № 9",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 9",
+    audio: "./assets/audio/music-9.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 9",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Чистый кайф»\nБаста"
+  },
+  {
+    type: "music-task",
+    round: "Часть 3",
+    title: "Музыкальная загадка № 10",
+    time: "Минус № 10",
+    kind: "song",
+    visual: "music",
+    caption: "Музыкальная загадка № 10",
+    audio: "./assets/audio/music-10.mp3",
+    text: "Что это за песня?\nНазови свою версию без вариантов ответа."
+  },
+  {
+    type: "music-answer",
+    round: "Часть 3",
+    title: "Верный ответ",
+    time: "Ответ № 10",
+    kind: "song",
+    visual: "music",
+    caption: "Верный ответ",
+    text: "«Самая моя»\nЧелси"
   },
   {
     type: "intro",
@@ -512,8 +712,16 @@ function showScreen(name) {
   });
 }
 
+function stopAudio() {
+  document.querySelectorAll("audio").forEach((audio) => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+}
+
 function renderQuestion() {
   const current = cards[index];
+  stopAudio();
   awaitingReveal = false;
   selectedReveal = null;
 
@@ -525,10 +733,15 @@ function renderQuestion() {
   questionText.textContent = current.text;
   feedback.textContent = "";
   nextButton.disabled = current.type === "question";
-  nextButton.textContent = index + 1 >= cards.length ? "Финал" : "Дальше";
+  nextButton.textContent = current.type === "music-task"
+    ? "Показать верный ответ"
+    : index + 1 >= cards.length
+      ? "Финал"
+      : "Дальше";
 
-  questionCard.classList.toggle("pause-card", current.type === "intro" || current.type === "info" || current.type === "interview");
+  questionCard.classList.toggle("pause-card", current.type === "intro" || current.type === "info" || current.type === "interview" || current.type === "music-answer");
   questionCard.classList.toggle("song-card", current.kind === "song");
+  questionCard.classList.toggle("music-task-card", current.type === "music-task");
   questionCard.classList.remove("reveal-card");
 
   visual.innerHTML = renderVisual(current, "question");
@@ -546,6 +759,8 @@ function renderQuestion() {
       button.addEventListener("click", () => chooseAnswer(answerIndex));
       answers.append(button);
     });
+  } else if (current.type === "music-task") {
+    renderAudioButton(current);
   }
 }
 
@@ -554,7 +769,11 @@ function renderReveal() {
 
   awaitingReveal = true;
   roundLabel.textContent = current.round;
-  questionTitle.textContent = current.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения";
+  questionTitle.textContent = current.round === "Часть 1"
+    ? "Правильный ответ"
+    : current.round === "Часть 3"
+      ? "Верный ответ"
+      : "Ответ Арсения";
   timing.textContent = "Экран ответа";
   questionText.textContent = current.reveal;
   feedback.textContent = selectedReveal?.label ? `Выбрано: ${selectedReveal.label}.` : "";
@@ -573,7 +792,7 @@ function renderVisual(card, mode = "question") {
     return `
       <div class="answer-poster">
         <div class="answer-mark">✓</div>
-        <div class="poster-title">${card.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения"}</div>
+        <div class="poster-title">${card.round === "Часть 1" ? "Правильный ответ" : card.round === "Часть 3" ? "Верный ответ" : "Ответ Арсения"}</div>
       </div>
     `;
   }
@@ -652,6 +871,38 @@ function chooseAnswer(answerIndex) {
   };
 
   renderReveal();
+}
+
+function renderAudioButton(card) {
+  const button = document.createElement("button");
+  const audio = document.createElement("audio");
+
+  button.className = "audio-play";
+  button.type = "button";
+  button.textContent = "Включить минус";
+
+  audio.preload = "none";
+  audio.src = card.audio;
+
+  button.addEventListener("click", () => {
+    if (!audio.paused) {
+      audio.pause();
+      button.textContent = "Продолжить минус";
+      return;
+    }
+
+    feedback.textContent = "";
+    audio.play()
+      .then(() => {
+        button.textContent = "Пауза";
+      })
+      .catch(() => {
+        feedback.textContent = "Минус пока не загружен. Можно включить его из подготовленного плейлиста и затем показать ответ.";
+      });
+  });
+
+  answers.append(button);
+  answers.append(audio);
 }
 
 function finishQuiz() {
