@@ -141,10 +141,226 @@ const cards = [
     text: "Мини-задание: показать фото и одним предложением рассказать, почему оно теплое.",
     answers: ["Фото найдено", "История готова", "Нужно еще полминуты", "Мы плачем, но красиво"],
     correct: null,
-    note: "Это мягкая пауза для воспоминаний перед музыкальной частью."
+    note: "Это мягкая пауза для воспоминаний перед вопросами о женихе."
   },
   {
-    round: "Часть 2",
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-color",
+    caption: "Вопрос от жениха",
+    text: "Какой твой любимый цвет?",
+    answers: ["зелёный", "оливковый", "изумрудный", "серо-зелёный"],
+    correct: 0,
+    note: "Верный ответ: зелёный."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-stars",
+    caption: "Вопрос от жениха",
+    text: "Какой у тебя знак зодиака?",
+    answers: ["Близнецы", "Весы", "Водолей", "Рак"],
+    correct: 0,
+    note: "Верный ответ: Близнецы."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-eyes",
+    caption: "Вопрос от жениха",
+    text: "Какой у тебя цвет глаз?",
+    answers: ["зелёный", "серо-зелёный", "каре-зелёный", "голубо-зелёный"],
+    correct: 0,
+    note: "Верный ответ: зелёный."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-actor",
+    caption: "Вопрос от жениха",
+    text: "Кто твой любимый актёр или актриса?",
+    answers: ["Вуди Харрельсон", "Мэттью Макконахи", "Брюс Уиллис", "Джейсон Стэйтем"],
+    correct: 0,
+    note: "Верный ответ: Вуди Харрельсон."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-food",
+    caption: "Вопрос от жениха",
+    text: "Какая твоя любимая еда?",
+    answers: ["свинина в кисло-сладком соусе", "курица в кисло-сладком соусе", "свинина в соусе терияки", "говядина в кисло-сладком соусе"],
+    correct: 0,
+    note: "Верный ответ: свинина в кисло-сладком соусе."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-child",
+    caption: "Вопрос от жениха",
+    text: "Кем ты хотел стать, когда был ребёнком?",
+    answers: ["поваром", "ресторатором", "кондитером", "барменом"],
+    correct: 0,
+    note: "Верный ответ: поваром."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-tattoo",
+    caption: "Вопрос от жениха",
+    text: "Если бы ты решился на татуировку, что бы ты набил?",
+    answers: ["какую-нибудь минималистичную абстракцию", "тонкую геометрическую линию", "маленький символ без смысла для других", "минималистичную надпись"],
+    correct: 0,
+    note: "Верный ответ: какую-нибудь минималистичную абстракцию."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-shoes",
+    caption: "Вопрос от жениха",
+    text: "Какой у тебя размер обуви?",
+    answers: ["41,5", "41", "42", "42,5"],
+    correct: 0,
+    note: "Верный ответ: 41,5."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-morning",
+    caption: "Вопрос от жениха",
+    text: "Ты жаворонок или сова?",
+    answers: ["жаворонок", "сова", "зависит от дня", "человек после кофе"],
+    correct: 0,
+    note: "Верный ответ: жаворонок."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-allergy",
+    caption: "Вопрос от жениха",
+    text: "На что у тебя аллергия?",
+    answers: ["аллергии нет", "на пыльцу", "на пыль", "на цитрусовые"],
+    correct: 0,
+    note: "Верный ответ: аллергии нет."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-sweet",
+    caption: "Вопрос от жениха",
+    text: "Какая твоя любимая сладость?",
+    answers: ["овсяные печеньки", "овсяные печеньки с изюмом", "шоколадное печенье", "имбирные печеньки"],
+    correct: 0,
+    note: "Верный ответ: овсяные печеньки."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-holiday",
+    caption: "Вопрос от жениха",
+    text: "Какой у тебя любимый праздник?",
+    answers: ["Новый год", "день рождения", "майские праздники", "Рождество"],
+    correct: 0,
+    note: "Верный ответ: Новый год."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-country",
+    caption: "Вопрос от жениха",
+    text: "В какую страну ты бы переехал, если бы была возможность?",
+    answers: ["Испания", "Португалия", "Италия", "Греция"],
+    correct: 0,
+    note: "Верный ответ: Испания."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-step",
+    caption: "Вопрос от жениха",
+    text: "Кто из вас сделал первый шаг в отношениях?",
+    answers: ["я (Арсений)", "она", "оба почти одновременно", "всё началось с переписки"],
+    correct: 0,
+    note: "Верный ответ: я (Арсений)."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-fate",
+    caption: "Вопрос от жениха",
+    text: "Ты веришь в судьбу или считаешь, что всё зависит от самого человека?",
+    answers: ["ответ не указан", "скорее верю в судьбу", "скорее всё зависит от человека", "думаю, что 50 на 50"],
+    correct: 0,
+    note: "Верный ответ: ответ не указан."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-money",
+    caption: "Вопрос от жениха",
+    text: "На что ты бы никогда не потратил деньги, хотя другие делают это постоянно?",
+    answers: ["на люксовые оверпрайс-вещи", "на дорогие лимитированные кроссовки", "на брендовые сумки", "на премиальные часы"],
+    correct: 0,
+    note: "Верный ответ: на люксовые оверпрайс-вещи."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-emoji",
+    caption: "Вопрос от жениха",
+    text: "Какой смайлик ты чаще всего используешь в переписке со мной или с близкими?",
+    answers: ["❤", "😘", "😅", "🥰"],
+    correct: 0,
+    note: "Верный ответ: ❤."
+  },
+  {
+    round: "Раздел о женихе",
+    title: "Насколько ты знаешь Сеню?",
+    time: "1 минута",
+    kind: "groom",
+    visual: "groom-rest",
+    caption: "Вопрос от жениха",
+    text: "Какой вид отдыха ты бы выбрал: пляж, город или горы?",
+    answers: ["пляж", "город", "горы", "домик у воды"],
+    correct: 0,
+    note: "Верный ответ: пляж."
+  },
+  {
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -156,7 +372,7 @@ const cards = [
     note: "Самая узнаваемая свадебная классика для общего подпевания."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -168,7 +384,7 @@ const cards = [
     note: "Песня прямо создана для свадебного момента."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -180,7 +396,7 @@ const cards = [
     note: "Современная карточка специально для невесты."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -204,7 +420,7 @@ const cards = [
     note: "Можно включить 15 секунд победившего трека."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -216,7 +432,7 @@ const cards = [
     note: "Хороший вариант для романтичной паузы."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -228,7 +444,7 @@ const cards = [
     note: "Не строго свадебная, зато отлично работает на танцпол."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -240,7 +456,7 @@ const cards = [
     note: "Для веселой части вечера и ностальгического смеха."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -252,7 +468,7 @@ const cards = [
     note: "Очень нежная классика для романтичного финала блока."
   },
   {
-    round: "Часть 2",
+    round: "Часть 3",
     title: "Угадай песню",
     time: "2 минуты",
     kind: "song",
@@ -276,7 +492,7 @@ const cards = [
     note: "Эта пауза красиво закрывает квиз перед финалом."
   },
   {
-    round: "Часть 2",
+    round: "Финал",
     title: "Финальный тост",
     time: "2 минуты",
     kind: "song",
@@ -393,6 +609,15 @@ function renderVisual(card) {
     `;
   }
 
+  if (card.kind === "groom") {
+    return `
+      <div class="groom-poster groom-poster--${card.visual}">
+        <div class="groom-symbol">${groomSymbol(card.visual)}</div>
+        <div class="poster-title">${card.caption}</div>
+      </div>
+    `;
+  }
+
   return `
     <div class="meme-poster meme-poster--${card.visual}">
       <div class="meme-art">
@@ -401,6 +626,31 @@ function renderVisual(card) {
       <div class="meme-caption">${card.caption}</div>
     </div>
   `;
+}
+
+function groomSymbol(type) {
+  const symbols = {
+    "groom-color": "💚",
+    "groom-stars": "♊",
+    "groom-eyes": "👀",
+    "groom-actor": "🎬",
+    "groom-food": "🍖",
+    "groom-child": "👨‍🍳",
+    "groom-tattoo": "〰",
+    "groom-shoes": "👟",
+    "groom-morning": "🌅",
+    "groom-allergy": "✨",
+    "groom-sweet": "🍪",
+    "groom-holiday": "🎄",
+    "groom-country": "🇪🇸",
+    "groom-step": "💌",
+    "groom-fate": "🔮",
+    "groom-money": "💸",
+    "groom-emoji": "❤",
+    "groom-rest": "🏖️"
+  };
+
+  return symbols[type] || "🤵";
 }
 
 function memeArt(type) {
@@ -455,9 +705,10 @@ function chooseAnswer(answerIndex) {
 
 function updatePet(celebrate = false) {
   const level = Math.min(score, scoredCards);
+  const visualLevel = Math.min(level, 20);
   petLevel.textContent = `${level} / ${scoredCards}`;
-  petStep.textContent = petSteps[level] || petSteps[petSteps.length - 1];
-  petScene.dataset.level = String(level);
+  petStep.textContent = petSteps[visualLevel] || petSteps[petSteps.length - 1];
+  petScene.dataset.level = String(visualLevel);
   petScene.classList.toggle("is-celebrating", celebrate);
 
   if (celebrate) {

@@ -654,12 +654,14 @@ h3 {
 }
 
 .meme-stage.is-flipping .meme-poster,
-.meme-stage.is-flipping .song-poster {
+.meme-stage.is-flipping .song-poster,
+.meme-stage.is-flipping .groom-poster {
   animation: posterFlip 720ms cubic-bezier(0.2, 1.2, 0.3, 1) both;
 }
 
 .meme-poster,
-.song-poster {
+.song-poster,
+.groom-poster {
   position: relative;
   display: grid;
   width: min(100%, 680px);
@@ -674,7 +676,8 @@ h3 {
 }
 
 .meme-poster::after,
-.song-poster::after {
+.song-poster::after,
+.groom-poster::after {
   position: absolute;
   inset: -40% -70%;
   content: "";
@@ -684,7 +687,8 @@ h3 {
 }
 
 .meme-poster::before,
-.song-poster::before {
+.song-poster::before,
+.groom-poster::before {
   position: absolute;
   inset: 12px;
   content: "";
@@ -1204,6 +1208,42 @@ h3 {
     linear-gradient(135deg, #5b3438, #c97982 58%, #fff0f2);
 }
 
+.groom-poster {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.88), transparent 7rem),
+    radial-gradient(circle at 82% 72%, rgba(217, 239, 224, 0.95), transparent 8rem),
+    linear-gradient(135deg, #fffaf6, #f7e3df 48%, #d9efe0);
+}
+
+.groom-symbol {
+  position: absolute;
+  left: 50%;
+  top: 42px;
+  z-index: 2;
+  display: grid;
+  width: 126px;
+  height: 126px;
+  place-items: center;
+  border-radius: 34px;
+  color: var(--rose-deep);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(157, 68, 84, 0.16);
+  box-shadow: 0 22px 48px rgba(157, 68, 84, 0.16);
+  font-size: 64px;
+  transform: translateX(-50%) rotate(-3deg);
+  animation: groomSymbolFloat 3.8s ease-in-out infinite;
+}
+
+.groom-poster .poster-title {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  margin-top: 152px;
+  color: var(--rose-deep);
+  font-size: clamp(30px, 4.6vw, 54px);
+  text-align: center;
+}
+
 .song-poster .poster-title {
   position: relative;
   z-index: 2;
@@ -1652,6 +1692,16 @@ h3 {
   }
 }
 
+@keyframes groomSymbolFloat {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px) rotate(3deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1727,12 +1777,14 @@ h3 {
   }
 
   .meme-poster,
-  .song-poster {
+  .song-poster,
+  .groom-poster {
     min-height: 260px;
     padding: 14px;
   }
 
-  .song-poster .poster-title {
+  .song-poster .poster-title,
+  .groom-poster .poster-title {
     margin-top: 150px;
   }
 
