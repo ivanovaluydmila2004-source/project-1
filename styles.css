@@ -1937,6 +1937,83 @@ h1::first-line {
   transform: rotate(1.2deg);
 }
 
+.image-poster {
+  grid-template-columns: minmax(220px, 0.92fr) minmax(240px, 1.08fr);
+  background:
+    linear-gradient(105deg, #231b1d 0 28%, #f06f93 28% 40%, rgba(255, 255, 255, 0.96) 40% 100%);
+}
+
+.image-photo {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: clamp(178px, 24vw, 270px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(35, 27, 29, 0.14), rgba(143, 51, 73, 0.06)),
+    var(--poster-image) center / cover;
+  box-shadow: 0 24px 46px rgba(35, 27, 29, 0.22);
+  transform: rotate(-3deg);
+}
+
+.image-photo::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, transparent 0 56%, rgba(35, 27, 29, 0.46) 100%),
+    radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.34), transparent 5rem);
+  mix-blend-mode: multiply;
+}
+
+.image-photo::after {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  width: 92px;
+  height: 24px;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 999px;
+  transform: rotate(-8deg);
+}
+
+.image-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 16px;
+  align-content: center;
+  max-width: 440px;
+}
+
+.image-copy span {
+  width: fit-content;
+  padding: 8px 14px;
+  border: 1px solid rgba(35, 27, 29, 0.18);
+  border-radius: 999px;
+  color: #231b1d;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.image-copy strong {
+  color: #231b1d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 6.4vw, 92px);
+  font-weight: 500;
+  line-height: 0.84;
+}
+
+.image-poster .poster-ribbon {
+  color: #fff;
+  background: #231b1d;
+}
+
 .groom-poster {
   grid-template-columns: 0.86fr 1.14fr;
   background:
@@ -2101,6 +2178,7 @@ h1::first-line {
   .editorial-poster,
   .chapter-poster,
   .options-poster,
+  .image-poster,
   .groom-poster,
   .song-poster,
   .answer-poster {
@@ -2116,6 +2194,7 @@ h1::first-line {
 
   .chapter-poster .poster-title,
   .options-title,
+  .image-copy,
   .groom-poster .poster-title,
   .song-poster .poster-title,
   .answer-poster .poster-title {
@@ -2134,7 +2213,12 @@ h1::first-line {
 
   .groom-symbol,
   .vinyl,
-  .answer-mark {
+  .answer-mark,
+  .image-photo {
+    justify-self: center;
+  }
+
+  .image-copy span {
     justify-self: center;
   }
 }

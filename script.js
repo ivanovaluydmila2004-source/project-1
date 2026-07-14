@@ -801,13 +801,14 @@ function renderVisual(card, mode = "question") {
 
   if (card.type === "question" && Array.isArray(card.answers)) {
     return `
-      <div class="options-poster editorial-poster">
+      <div class="image-poster editorial-poster" style="--poster-image: url('${imageForCard(card)}')">
         <div class="poster-badge">${card.round}</div>
-        <div class="options-title">${card.caption}</div>
-        <div class="option-tiles">
-          ${card.answers.map((answer) => `<span>${answer}</span>`).join("")}
+        <div class="image-photo" aria-hidden="true"></div>
+        <div class="image-copy">
+          <span>${card.caption}</span>
+          <strong>${visualHeadline(card)}</strong>
         </div>
-        <div class="poster-ribbon">choose one</div>
+        <div class="poster-ribbon">no hints</div>
       </div>
     `;
   }
@@ -843,6 +844,46 @@ function renderVisual(card, mode = "question") {
       <div class="poster-ribbon">bachelorette quiz</div>
     </div>
   `;
+}
+
+function imageForCard(card) {
+  const images = {
+    "wedding-fee": "https://source.unsplash.com/900x650/?wedding,document,rings",
+    "wedding-zags": "https://source.unsplash.com/900x650/?wedding,ceremony,papers",
+    "wedding-calendar": "https://source.unsplash.com/900x650/?wedding,calendar,flowers",
+    "wedding-veil": "https://source.unsplash.com/6UGNBdyAVTI/900x650",
+    "wedding-tree": "https://source.unsplash.com/XAv-J80h8T0/900x650",
+    "wedding-coat": "https://source.unsplash.com/900x650/?wedding,texture,fabric",
+    "wedding-date": "https://source.unsplash.com/900x650/?wedding,planning,table",
+    "wedding-loaf": "https://source.unsplash.com/XAv-J80h8T0/900x650",
+    "groom-color": "https://source.unsplash.com/gSWL9_SPMag/900x650",
+    "groom-stars": "https://source.unsplash.com/900x650/?night,sky,portrait",
+    "groom-eyes": "https://source.unsplash.com/gSWL9_SPMag/900x650",
+    "groom-actor": "https://source.unsplash.com/900x650/?cinema,seats,film",
+    "groom-food": "https://source.unsplash.com/fKBKimefyMI/900x650",
+    "groom-child": "https://source.unsplash.com/900x650/?kitchen,cooking,chef",
+    "groom-tattoo": "https://source.unsplash.com/900x650/?minimal,tattoo,line",
+    "groom-shoes": "https://source.unsplash.com/gSWL9_SPMag/900x650",
+    "groom-morning": "https://source.unsplash.com/_iw56L7o6H8/900x650",
+    "groom-allergy": "https://source.unsplash.com/XAv-J80h8T0/900x650",
+    "groom-sweet": "https://source.unsplash.com/900x650/?cookies,dessert,table",
+    "groom-holiday": "https://source.unsplash.com/900x650/?holiday,lights,home",
+    "groom-country": "https://source.unsplash.com/900x650/?travel,passport,luggage",
+    "groom-step": "https://source.unsplash.com/qq4Djkigltg/900x650",
+    "groom-fate": "https://source.unsplash.com/900x650/?stars,abstract,night",
+    "groom-money": "https://source.unsplash.com/900x650/?fashion,store,details",
+    "groom-emoji": "https://source.unsplash.com/900x650/?phone,message,hand",
+    "groom-rest": "https://source.unsplash.com/900x650/?travel,luggage,summer"
+  };
+
+  return images[card.visual] || "https://source.unsplash.com/6UGNBdyAVTI/900x650";
+}
+
+function visualHeadline(card) {
+  if (card.round === "Часть 1") return "атмосфера вопроса";
+  if (card.round === "Часть 2") return "деталь о Сене";
+  if (card.round === "Часть 3") return "музыкальная пауза";
+  return "история пары";
 }
 
 function groomSymbol(type) {
