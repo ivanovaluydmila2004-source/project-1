@@ -184,10 +184,8 @@ const cards = [
     visual: "groom-food",
     caption: "Открытый ответ",
     text: "Какая твоя любимая еда?",
-    answers: ["2 балла", "1 балл", "0 баллов"],
-    manualScores: [2, 1, 0],
-    maxPoints: 2,
-    reveal: "Ответ Арсения: свинина в кисло-сладком соусе. 2 балла — точный ответ; 1 балл — мясо и кисло-сладкий соус без свинины; 0 баллов — другой ответ."
+    answers: ["Совпало полностью", "Похоже по смыслу", "Другая версия"],
+    reveal: "Ответ Арсения: свинина в кисло-сладком соусе."
   },
   {
     type: "question",
@@ -211,10 +209,8 @@ const cards = [
     visual: "groom-tattoo",
     caption: "Открытый ответ",
     text: "Если бы ты решился на татуировку, что бы ты набил?",
-    answers: ["2 балла", "1 балл", "0 баллов"],
-    manualScores: [2, 1, 0],
-    maxPoints: 2,
-    reveal: "Ответ Арсения: какую-нибудь минималистичную абстракцию. 2 балла — минималистичная абстракция; 1 балл — минимализм или абстракция без второй части; 0 баллов — конкретное сюжетное изображение или другой ответ."
+    answers: ["Совпало полностью", "Похоже по смыслу", "Другая версия"],
+    reveal: "Ответ Арсения: какую-нибудь минималистичную абстракцию."
   },
   {
     type: "question",
@@ -314,12 +310,11 @@ const cards = [
     time: "1 минута",
     kind: "groom",
     visual: "groom-fate",
-    caption: "Прогноз без баллов",
+    caption: "Прогноз",
     text: "Ты веришь в судьбу или считаешь, что всё зависит от самого человека?",
     answers: ["А. Верю в судьбу", "Б. Считаю, что всё зависит от самого человека"],
     correct: null,
-    maxPoints: 0,
-    reveal: "Ответ Арсения необходимо дополнить. Сейчас этот вопрос показан как прогноз и не входит в общий подсчёт."
+    reveal: "Ответ Арсения необходимо дополнить. Сейчас этот вопрос показан как прогноз."
   },
   {
     type: "question",
@@ -330,10 +325,8 @@ const cards = [
     visual: "groom-money",
     caption: "Открытый ответ",
     text: "На что ты бы никогда не потратил деньги, хотя другие делают это постоянно?",
-    answers: ["2 балла", "1 балл", "0 баллов"],
-    manualScores: [2, 1, 0],
-    maxPoints: 2,
-    reveal: "Ответ Арсения: на люксовые оверпрайс-вещи. 2 балла — люксовые вещи с неоправданной переплатой за бренд; 1 балл — дорогие брендовые или люксовые вещи; 0 баллов — другой ответ."
+    answers: ["Совпало полностью", "Похоже по смыслу", "Другая версия"],
+    reveal: "Ответ Арсения: на люксовые оверпрайс-вещи."
   },
   {
     type: "question",
@@ -493,36 +486,6 @@ const cards = [
   }
 ];
 
-const petSteps = [
-  "Котенок проснулся",
-  "Кормим котенка",
-  "Котенок сыт",
-  "Моем лапки",
-  "Пенная ванна",
-  "Сушим полотенцем",
-  "Расчесываем шерстку",
-  "Добавляем бантик",
-  "Надеваем корону",
-  "Выдаем розовый шарик",
-  "Котенок готовит тост",
-  "Котенок танцует",
-  "Добавляем блеск",
-  "Котенок в фотозоне",
-  "Котенок ловит букет",
-  "Котенок стал звездой",
-  "Котенок несет кольца",
-  "Праздничный образ готов",
-  "Котенок сияет",
-  "Финальный мяу-тост",
-  "Котенок королевы вечера"
-];
-
-const scoredCards = cards.reduce((total, card) => {
-  if (typeof card.maxPoints === "number") return total + card.maxPoints;
-  if (card.manualScores) return total + Math.max(...card.manualScores);
-  return total + (card.type === "question" && card.correct !== null ? 1 : 0);
-}, 0);
-
 const screens = document.querySelectorAll(".screen");
 const startButton = document.querySelector("[data-start]");
 const restartButton = document.querySelector("[data-restart]");
@@ -532,20 +495,14 @@ const roundLabel = document.querySelector("[data-round-label]");
 const questionTitle = document.querySelector("[data-question-title]");
 const progress = document.querySelector("[data-progress]");
 const progressBar = document.querySelector("[data-progress-bar]");
-const scoreLabel = document.querySelector("[data-score]");
 const visual = document.querySelector("[data-visual]");
 const timing = document.querySelector("[data-timing]");
 const questionText = document.querySelector("[data-question-text]");
 const answers = document.querySelector("[data-answers]");
 const feedback = document.querySelector("[data-feedback]");
-const finalScore = document.querySelector("[data-final-score]");
 const questionCard = document.querySelector(".question-card");
-const petScene = document.querySelector("[data-pet-scene]");
-const petStep = document.querySelector("[data-pet-step]");
-const petLevel = document.querySelector("[data-pet-level]");
 
 let index = 0;
-let score = 0;
 let awaitingReveal = false;
 let selectedReveal = null;
 
@@ -564,7 +521,6 @@ function renderQuestion() {
   questionTitle.textContent = current.title;
   progress.textContent = `${index + 1} / ${cards.length}`;
   progressBar.style.width = `${((index + 1) / cards.length) * 100}%`;
-  scoreLabel.textContent = score;
   timing.textContent = current.time;
   questionText.textContent = current.text;
   feedback.textContent = "";
@@ -591,20 +547,17 @@ function renderQuestion() {
       answers.append(button);
     });
   }
-
-  updatePet();
 }
 
 function renderReveal() {
   const current = cards[index];
-  const earned = selectedReveal?.earnedPoints || 0;
 
   awaitingReveal = true;
   roundLabel.textContent = current.round;
   questionTitle.textContent = current.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения";
   timing.textContent = "Экран ответа";
   questionText.textContent = current.reveal;
-  feedback.textContent = selectedReveal?.label ? `Выбрано: ${selectedReveal.label}. Баллы: ${earned}.` : "";
+  feedback.textContent = selectedReveal?.label ? `Выбрано: ${selectedReveal.label}.` : "";
   answers.innerHTML = "";
   nextButton.disabled = false;
   nextButton.textContent = index + 1 >= cards.length ? "Финал" : "Показать следующий вопрос";
@@ -694,69 +647,19 @@ function chooseAnswer(answerIndex) {
   if (awaitingReveal) return;
 
   const current = cards[index];
-  const isManual = Array.isArray(current.manualScores);
-  const earnedPoints = isManual
-    ? current.manualScores[answerIndex]
-    : current.correct === null
-      ? 0
-      : answerIndex === current.correct
-        ? 1
-        : 0;
-
-  score += earnedPoints;
   selectedReveal = {
-    earnedPoints,
     label: current.answers[answerIndex]
   };
 
-  if (earnedPoints > 0) {
-    updatePet(true);
-    burstConfetti(12);
-    questionCard.classList.add("is-correct-pop");
-    window.setTimeout(() => questionCard.classList.remove("is-correct-pop"), 700);
-  }
-
-  scoreLabel.textContent = score;
   renderReveal();
 }
 
-function updatePet(celebrate = false) {
-  const level = Math.min(score, scoredCards);
-  const visualLevel = Math.min(level, 20);
-  petLevel.textContent = `${level} / ${scoredCards}`;
-  petStep.textContent = petSteps[visualLevel] || petSteps[petSteps.length - 1];
-  petScene.dataset.level = String(visualLevel);
-  petScene.classList.toggle("is-celebrating", celebrate);
-
-  if (celebrate) {
-    window.setTimeout(() => petScene.classList.remove("is-celebrating"), 650);
-  }
-}
-
-function burstConfetti(amount) {
-  const colors = ["#c97982", "#f0a2aa", "#c49a6c", "#fff0f2", "#9d4454"];
-
-  for (let i = 0; i < amount; i += 1) {
-    const piece = document.createElement("span");
-    piece.className = "confetti";
-    piece.style.left = `${Math.random() * 100}%`;
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-    piece.style.animationDelay = `${Math.random() * 160}ms`;
-    piece.style.transform = `rotate(${Math.random() * 180}deg)`;
-    document.body.append(piece);
-    window.setTimeout(() => piece.remove(), 1500);
-  }
-}
-
 function finishQuiz() {
-  finalScore.textContent = `${score} / ${scoredCards}`;
-  burstConfetti(34);
   showScreen("finale");
 }
 
 startButton.addEventListener("click", () => {
   index = 0;
-  score = 0;
   renderQuestion();
   showScreen("quiz");
 });
@@ -773,7 +676,6 @@ nextButton.addEventListener("click", () => {
 
 restartButton.addEventListener("click", () => {
   index = 0;
-  score = 0;
   renderQuestion();
   showScreen("quiz");
 });
