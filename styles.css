@@ -655,13 +655,17 @@ h3 {
 
 .meme-stage.is-flipping .meme-poster,
 .meme-stage.is-flipping .song-poster,
-.meme-stage.is-flipping .groom-poster {
+.meme-stage.is-flipping .groom-poster,
+.meme-stage.is-flipping .options-poster,
+.meme-stage.is-flipping .answer-poster {
   animation: posterFlip 720ms cubic-bezier(0.2, 1.2, 0.3, 1) both;
 }
 
 .meme-poster,
 .song-poster,
-.groom-poster {
+.groom-poster,
+.options-poster,
+.answer-poster {
   position: relative;
   display: grid;
   width: min(100%, 680px);
@@ -677,7 +681,9 @@ h3 {
 
 .meme-poster::after,
 .song-poster::after,
-.groom-poster::after {
+.groom-poster::after,
+.options-poster::after,
+.answer-poster::after {
   position: absolute;
   inset: -40% -70%;
   content: "";
@@ -688,12 +694,83 @@ h3 {
 
 .meme-poster::before,
 .song-poster::before,
-.groom-poster::before {
+.groom-poster::before,
+.options-poster::before,
+.answer-poster::before {
   position: absolute;
   inset: 12px;
   content: "";
   border: 1px solid rgba(157, 68, 84, 0.16);
   border-radius: 8px;
+}
+
+.options-poster {
+  align-content: center;
+  gap: 18px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.94), transparent 7rem),
+    linear-gradient(135deg, #fffaf6, #f7e3df 52%, #d9efe0);
+}
+
+.options-title {
+  position: relative;
+  z-index: 2;
+  color: var(--rose-deep);
+  font-size: clamp(26px, 4vw, 46px);
+  font-family: "Bohema Pink", "Gabin", Georgia, serif;
+}
+
+.option-tiles {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(100%, 560px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.option-tiles span {
+  display: grid;
+  min-height: 58px;
+  align-items: center;
+  padding: 10px 12px;
+  color: var(--cocoa);
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(157, 68, 84, 0.16);
+  border-radius: 8px;
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.15;
+  box-shadow: 0 10px 22px rgba(157, 68, 84, 0.09);
+}
+
+.answer-poster {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255, 255, 255, 0.96), transparent 8rem),
+    linear-gradient(135deg, #fffaf6, #f0d5dc 50%, #d9efe0);
+}
+
+.answer-mark {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: clamp(92px, 14vw, 138px);
+  height: clamp(92px, 14vw, 138px);
+  place-items: center;
+  border-radius: 32px;
+  color: #fff;
+  background: linear-gradient(135deg, #8f9f74, var(--rose-deep));
+  box-shadow: 0 22px 52px rgba(157, 68, 84, 0.22);
+  font-size: clamp(54px, 8vw, 86px);
+  animation: popIn 520ms cubic-bezier(0.2, 1.4, 0.35, 1) both;
+}
+
+.answer-poster .poster-title {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px;
+  color: var(--rose-deep);
+  font-size: clamp(34px, 5vw, 62px);
+  text-align: center;
 }
 
 .meme-art {
@@ -1778,9 +1855,15 @@ h3 {
 
   .meme-poster,
   .song-poster,
-  .groom-poster {
+  .groom-poster,
+  .options-poster,
+  .answer-poster {
     min-height: 260px;
     padding: 14px;
+  }
+
+  .option-tiles {
+    grid-template-columns: 1fr;
   }
 
   .song-poster .poster-title,

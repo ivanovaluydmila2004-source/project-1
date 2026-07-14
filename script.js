@@ -575,7 +575,7 @@ function renderQuestion() {
   questionCard.classList.toggle("song-card", current.kind === "song");
   questionCard.classList.remove("reveal-card");
 
-  visual.innerHTML = renderVisual(current);
+  visual.innerHTML = renderVisual(current, "question");
   visual.classList.remove("is-flipping");
   window.requestAnimationFrame(() => visual.classList.add("is-flipping"));
   answers.innerHTML = "";
@@ -601,24 +601,41 @@ function renderReveal() {
 
   awaitingReveal = true;
   roundLabel.textContent = current.round;
-  questionTitle.textContent = current.title;
+  questionTitle.textContent = current.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения";
   timing.textContent = "Экран ответа";
   questionText.textContent = current.reveal;
   feedback.textContent = selectedReveal?.label ? `Выбрано: ${selectedReveal.label}. Баллы: ${earned}.` : "";
   answers.innerHTML = "";
   nextButton.disabled = false;
-  nextButton.textContent = index + 1 >= cards.length ? "Финал" : "Дальше";
+  nextButton.textContent = index + 1 >= cards.length ? "Финал" : "Показать следующий вопрос";
   questionCard.classList.add("reveal-card");
 
-  visual.innerHTML = renderVisual({
-    ...current,
-    caption: current.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения"
-  });
+  visual.innerHTML = renderVisual(current, "reveal");
   visual.classList.remove("is-flipping");
   window.requestAnimationFrame(() => visual.classList.add("is-flipping"));
 }
 
-function renderVisual(card) {
+function renderVisual(card, mode = "question") {
+  if (mode === "reveal") {
+    return `
+      <div class="answer-poster">
+        <div class="answer-mark">✓</div>
+        <div class="poster-title">${card.round === "Часть 1" ? "Правильный ответ" : "Ответ Арсения"}</div>
+      </div>
+    `;
+  }
+
+  if (card.type === "question" && Array.isArray(card.answers)) {
+    return `
+      <div class="options-poster">
+        <div class="options-title">${card.caption}</div>
+        <div class="option-tiles">
+          ${card.answers.map((answer) => `<span>${answer}</span>`).join("")}
+        </div>
+      </div>
+    `;
+  }
+
   if (card.kind === "song") {
     return `
       <div class="song-poster song-poster--${card.visual}">
