@@ -791,7 +791,7 @@ function renderVisual(card, mode = "question") {
   if (mode === "reveal") {
     return `
       <div class="answer-poster">
-        <div class="answer-mark">✓</div>
+        <div class="answer-mark">OK</div>
         <div class="poster-title">${card.round === "Часть 1" ? "Правильный ответ" : card.round === "Часть 3" ? "Верный ответ" : "Ответ Арсения"}</div>
       </div>
     `;
@@ -828,38 +828,38 @@ function renderVisual(card, mode = "question") {
 
 function groomSymbol(type) {
   const symbols = {
-    "wedding-fee": "💍",
-    "wedding-zags": "📜",
-    "wedding-calendar": "📅",
-    "wedding-veil": "👰",
-    "wedding-tree": "🌿",
-    "wedding-coat": "🧥",
+    "wedding-fee": "350",
+    "wedding-zags": "ЗАГС",
+    "wedding-calendar": "30",
+    "wedding-veil": "ОБРЯД",
+    "wedding-tree": "ТРАД",
+    "wedding-coat": "ШУБА",
     "wedding-date": "26",
-    "wedding-loaf": "🥖",
-    "groom-color": "💚",
+    "wedding-loaf": "КАР",
+    "groom-color": "GREEN",
     "groom-stars": "♊",
-    "groom-eyes": "👀",
-    "groom-actor": "🎬",
-    "groom-food": "🍖",
-    "groom-child": "👨‍🍳",
+    "groom-eyes": "EYES",
+    "groom-actor": "FILM",
+    "groom-food": "FOOD",
+    "groom-child": "CHEF",
     "groom-tattoo": "〰",
-    "groom-shoes": "👟",
-    "groom-morning": "🌅",
-    "groom-allergy": "✨",
-    "groom-sweet": "🍪",
-    "groom-holiday": "🎄",
-    "groom-country": "🇪🇸",
-    "groom-step": "💌",
-    "groom-fate": "🔮",
-    "groom-money": "💸",
-    "groom-emoji": "❤",
-    "groom-rest": "🏖️",
-    music: "🎧",
-    playlist: "🎵",
-    story: "🎥"
+    "groom-shoes": "41,5",
+    "groom-morning": "AM",
+    "groom-allergy": "NO",
+    "groom-sweet": "SWEET",
+    "groom-holiday": "NY",
+    "groom-country": "ES",
+    "groom-step": "STEP",
+    "groom-fate": "FATE",
+    "groom-money": "LUX",
+    "groom-emoji": "LOVE",
+    "groom-rest": "SEA",
+    music: "PLAY",
+    playlist: "LIST",
+    story: "VIDEO"
   };
 
-  return symbols[type] || "💗";
+  return symbols[type] || "LOVE";
 }
 
 function chooseAnswer(answerIndex) {

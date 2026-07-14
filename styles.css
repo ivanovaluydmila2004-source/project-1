@@ -1595,3 +1595,694 @@ h3 {
     text-align: right;
   }
 }
+
+/* Editorial redesign inspired by the provided pink beauty-layout references. */
+:root {
+  --ink: #1f1a1b;
+  --muted-ink: #6d5a5e;
+  --rose: #e28fa4;
+  --rose-deep: #8f3349;
+  --blush: #f8cbd6;
+  --cream: #fffdfb;
+  --pearl: #f4d7df;
+  --cocoa: #2a2022;
+  --gold: #b7818d;
+  --line: rgba(31, 26, 27, 0.18);
+  --shadow: 0 22px 54px rgba(75, 38, 46, 0.14);
+}
+
+body {
+  color: var(--ink);
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.36), transparent 31%),
+    radial-gradient(ellipse at 18% 6%, rgba(255, 255, 255, 0.62), transparent 28rem),
+    linear-gradient(180deg, #f5c9d3 0%, #f8d9e0 54%, #fff8f8 100%);
+  font-family: "Gabin", "Inter", Arial, sans-serif;
+}
+
+body::before {
+  opacity: 0.2;
+  background-image:
+    radial-gradient(rgba(31, 26, 27, 0.16) 0.65px, transparent 0.65px),
+    linear-gradient(115deg, transparent 0 48%, rgba(255, 255, 255, 0.46) 48% 52%, transparent 52%);
+  background-size: 4px 4px, 100% 100%;
+  mix-blend-mode: multiply;
+}
+
+.ambient span {
+  width: clamp(180px, 30vw, 420px);
+  height: clamp(84px, 15vw, 180px);
+  aspect-ratio: auto;
+  border: 1px solid rgba(143, 51, 73, 0.32);
+  border-radius: 52% 48% 58% 42%;
+  background: transparent;
+  box-shadow: none;
+  transform: rotate(-16deg);
+  animation: lineDrift 18s ease-in-out infinite;
+}
+
+.ambient span:nth-child(1) {
+  left: -8%;
+  top: 14%;
+}
+
+.ambient span:nth-child(2) {
+  right: -10%;
+  top: 18%;
+  transform: rotate(24deg);
+}
+
+.ambient span:nth-child(3) {
+  left: 58%;
+  bottom: 10%;
+  transform: rotate(-8deg);
+}
+
+.ambient span:nth-child(4),
+.ambient span:nth-child(5) {
+  display: none;
+}
+
+.screen {
+  padding: clamp(18px, 4vw, 46px);
+}
+
+.hero {
+  align-items: center;
+  min-height: 100vh;
+  padding: clamp(22px, 6vw, 72px);
+  background: transparent;
+  animation: none;
+}
+
+.hero::before {
+  inset: clamp(16px, 3vw, 34px);
+  border: 0;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  inset: clamp(28px, 4.2vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+}
+
+.hero__content {
+  max-width: min(780px, 68vw);
+  padding: clamp(18px, 3vw, 34px);
+}
+
+.date,
+.kicker,
+.timing {
+  color: var(--muted-ink);
+  font-family: "Gabin", Arial, sans-serif;
+  font-size: clamp(13px, 1.3vw, 16px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 820px;
+  color: var(--ink);
+  font-size: clamp(58px, 10vw, 132px);
+  line-height: 0.88;
+  text-shadow: none;
+  animation: none;
+}
+
+h2 {
+  color: var(--ink);
+  font-size: clamp(30px, 4.8vw, 64px);
+  line-height: 0.94;
+}
+
+.lead {
+  max-width: 620px;
+  color: var(--muted-ink);
+  font-size: clamp(17px, 2.1vw, 23px);
+  line-height: 1.42;
+}
+
+.plan-strip {
+  gap: 8px;
+}
+
+.plan-strip span,
+.timing {
+  border: 1px solid rgba(31, 26, 27, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.primary,
+.secondary,
+.ghost {
+  min-height: 52px;
+  border-radius: 14px;
+  font-family: "Gabin", Arial, sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.primary,
+.secondary {
+  color: #fff;
+  background: linear-gradient(135deg, #8f3349, #ca657d);
+  box-shadow: 0 16px 32px rgba(143, 51, 73, 0.22);
+}
+
+.hero__media {
+  position: absolute;
+  inset: clamp(16px, 3vw, 34px);
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 34px;
+}
+
+.hero-photo-panel {
+  position: absolute;
+  right: clamp(24px, 7vw, 104px);
+  top: clamp(66px, 14vh, 142px);
+  display: grid;
+  width: clamp(210px, 28vw, 390px);
+  height: clamp(250px, 36vw, 480px);
+  align-content: end;
+  gap: 8px;
+  padding: clamp(18px, 2.4vw, 28px);
+  overflow: hidden;
+  border: 1px solid rgba(31, 26, 27, 0.2);
+  border-radius: 26px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.12), transparent 42%),
+    radial-gradient(circle at 48% 23%, rgba(255, 255, 255, 0.92), transparent 4rem),
+    linear-gradient(135deg, #efb0bd, #d8738b 54%, #f8d9e0);
+  box-shadow: 0 20px 50px rgba(75, 38, 46, 0.18);
+  transform: rotate(1.5deg);
+}
+
+.hero-photo-panel::before,
+.hero-photo-panel::after {
+  position: absolute;
+  content: "";
+}
+
+.hero-photo-panel::before {
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 20px;
+}
+
+.hero-photo-panel::after {
+  right: -42px;
+  top: 38px;
+  width: 220px;
+  height: 1px;
+  background: rgba(31, 26, 27, 0.42);
+  box-shadow: -68px 46px 0 rgba(31, 26, 27, 0.28), -18px 110px 0 rgba(31, 26, 27, 0.24);
+  transform: rotate(-24deg);
+}
+
+.hero-photo-panel span,
+.hero-photo-panel strong,
+.hero-mini-card {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo-panel span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(13px, 1.4vw, 18px);
+  letter-spacing: 0.24em;
+}
+
+.hero-photo-panel strong {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(52px, 8vw, 116px);
+  line-height: 0.84;
+  font-weight: 500;
+}
+
+.hero-mini-card {
+  position: absolute;
+  display: grid;
+  min-width: 132px;
+  min-height: 70px;
+  place-items: center;
+  padding: 16px;
+  border: 1px solid rgba(31, 26, 27, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  box-shadow: 0 14px 36px rgba(75, 38, 46, 0.12);
+}
+
+.hero-mini-card--one {
+  right: clamp(210px, 34vw, 520px);
+  top: clamp(42px, 12vh, 118px);
+  transform: rotate(-4deg);
+}
+
+.hero-mini-card--two {
+  right: clamp(36px, 9vw, 140px);
+  bottom: clamp(70px, 18vh, 170px);
+  transform: rotate(5deg);
+}
+
+.hero-line {
+  position: absolute;
+  width: clamp(180px, 28vw, 420px);
+  height: clamp(80px, 12vw, 150px);
+  border: 1px solid rgba(143, 51, 73, 0.42);
+  border-radius: 50%;
+}
+
+.hero-line--one {
+  right: clamp(130px, 22vw, 330px);
+  bottom: clamp(52px, 13vh, 140px);
+  transform: rotate(-18deg);
+}
+
+.hero-line--two {
+  right: -44px;
+  top: clamp(72px, 15vh, 150px);
+  transform: rotate(28deg);
+}
+
+.hero-star {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+}
+
+.hero-star::before,
+.hero-star::after {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  content: "";
+  background: var(--ink);
+}
+
+.hero-star::before {
+  width: 1px;
+  height: 34px;
+}
+
+.hero-star::after {
+  width: 34px;
+  height: 1px;
+}
+
+.hero-star--one {
+  right: clamp(80px, 14vw, 190px);
+  top: clamp(42px, 10vh, 108px);
+}
+
+.hero-star--two {
+  right: clamp(300px, 45vw, 640px);
+  bottom: clamp(86px, 18vh, 180px);
+  transform: scale(0.72);
+}
+
+.quiz-shell {
+  max-width: 1120px;
+  gap: 18px;
+}
+
+.topbar {
+  position: relative;
+  padding: 22px clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(31, 26, 27, 0.14);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 38px rgba(75, 38, 46, 0.09);
+}
+
+.progress-track {
+  height: 5px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(31, 26, 27, 0.1);
+}
+
+.progress-track span {
+  background: linear-gradient(90deg, var(--ink), var(--rose-deep), var(--rose));
+}
+
+.progress-count {
+  color: var(--muted-ink);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.question-card {
+  gap: 18px;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid rgba(31, 26, 27, 0.14);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.meme-stage {
+  min-height: clamp(210px, 34vw, 360px);
+  border: 1px solid rgba(31, 26, 27, 0.12);
+  border-radius: 24px;
+  background:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.28) 42%, rgba(238, 166, 181, 0.36)),
+    linear-gradient(135deg, #f6d4dc, #fff9f7 62%);
+}
+
+.meme-stage::before {
+  position: absolute;
+  inset: 18px;
+  content: "";
+  border: 1px solid rgba(31, 26, 27, 0.11);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.meme-stage.is-flipping .meme-poster,
+.meme-stage.is-flipping .song-poster,
+.meme-stage.is-flipping .groom-poster,
+.meme-stage.is-flipping .options-poster,
+.meme-stage.is-flipping .answer-poster {
+  animation: editorialIn 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.meme-poster,
+.song-poster,
+.groom-poster,
+.options-poster,
+.answer-poster {
+  width: min(100%, 720px);
+  min-height: clamp(220px, 32vw, 340px);
+  border: 1px solid rgba(31, 26, 27, 0.16);
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse at 76% 18%, rgba(255, 255, 255, 0.82), transparent 8rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(247, 204, 214, 0.86));
+  box-shadow: 0 18px 42px rgba(75, 38, 46, 0.1);
+}
+
+.meme-poster::after,
+.song-poster::after,
+.groom-poster::after,
+.options-poster::after,
+.answer-poster::after {
+  inset: auto;
+  right: -54px;
+  top: 34px;
+  width: 260px;
+  height: 92px;
+  border: 1px solid rgba(143, 51, 73, 0.34);
+  border-radius: 50%;
+  background: transparent;
+  transform: rotate(-18deg);
+  animation: none;
+}
+
+.meme-poster::before,
+.song-poster::before,
+.groom-poster::before,
+.options-poster::before,
+.answer-poster::before {
+  inset: 14px;
+  border-color: rgba(31, 26, 27, 0.1);
+  border-radius: 16px;
+}
+
+.options-poster {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(247, 202, 213, 0.86)),
+    radial-gradient(ellipse at 10% 88%, rgba(143, 51, 73, 0.12), transparent 9rem);
+}
+
+.options-title {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 48px);
+}
+
+.option-tiles span {
+  min-height: 62px;
+  border: 1px solid rgba(31, 26, 27, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.answer-poster {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(245, 195, 207, 0.9)),
+    radial-gradient(ellipse at 72% 18%, rgba(255, 255, 255, 0.7), transparent 9rem);
+}
+
+.answer-mark {
+  width: clamp(86px, 12vw, 124px);
+  height: clamp(86px, 12vw, 124px);
+  border: 1px solid rgba(31, 26, 27, 0.18);
+  border-radius: 50%;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 72px);
+}
+
+.answer-poster .poster-title {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.groom-poster {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(250, 215, 224, 0.9)),
+    radial-gradient(ellipse at 10% 80%, rgba(31, 26, 27, 0.06), transparent 10rem);
+}
+
+.groom-symbol {
+  top: 38px;
+  width: clamp(126px, 18vw, 178px);
+  height: clamp(84px, 11vw, 118px);
+  border: 1px solid rgba(31, 26, 27, 0.16);
+  border-radius: 18px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 16px 30px rgba(75, 38, 46, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 4vw, 42px);
+  line-height: 0.9;
+  animation: none;
+}
+
+.groom-poster .poster-title,
+.song-poster .poster-title {
+  margin-top: clamp(118px, 17vw, 150px);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4.2vw, 52px);
+  text-shadow: none;
+  animation: none;
+}
+
+.song-poster {
+  background:
+    linear-gradient(135deg, #2b2426, #8f3349 58%, #f1beca);
+}
+
+.song-poster .poster-title {
+  color: #fff;
+}
+
+.vinyl {
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background:
+    radial-gradient(circle, #f7cbd5 0 12px, rgba(255, 255, 255, 0.9) 13px 26px, transparent 27px),
+    repeating-radial-gradient(circle, #171315 0 8px, #33272a 9px 12px);
+}
+
+.sound-bars span {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.timing {
+  padding: 8px 14px;
+}
+
+.question {
+  color: var(--ink);
+  font-size: clamp(21px, 2.6vw, 31px);
+  line-height: 1.28;
+}
+
+.answers {
+  gap: 10px;
+}
+
+.answer {
+  border: 1px solid rgba(31, 26, 27, 0.13);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.answer:hover:not(:disabled) {
+  box-shadow: 0 12px 26px rgba(75, 38, 46, 0.1);
+}
+
+.audio-play {
+  border-radius: 16px;
+  background: linear-gradient(135deg, #222, #8f3349 64%, #e28fa4);
+  box-shadow: 0 18px 34px rgba(75, 38, 46, 0.18);
+}
+
+.feedback {
+  color: var(--muted-ink);
+  font-size: 18px;
+}
+
+.pause-card .meme-stage {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(247, 203, 214, 0.58)),
+    linear-gradient(90deg, rgba(31, 26, 27, 0.04) 0 1px, transparent 1px 28px);
+}
+
+.finale {
+  background: transparent;
+}
+
+.finale h2 {
+  color: var(--ink);
+}
+
+@keyframes editorialIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lineDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-16deg);
+  }
+  50% {
+    transform: translate3d(16px, -12px, 0) rotate(-11deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    align-items: start;
+    padding: 18px;
+  }
+
+  .hero::before {
+    inset: 8px;
+    border-radius: 22px;
+  }
+
+  .hero::after {
+    inset: 18px;
+    border-radius: 16px;
+  }
+
+  .hero__content {
+    max-width: none;
+    padding: 24px 16px 250px;
+  }
+
+  h1 {
+    font-size: clamp(52px, 18vw, 86px);
+  }
+
+  .hero-photo-panel {
+    right: 28px;
+    bottom: 36px;
+    top: auto;
+    width: min(68vw, 260px);
+    height: 210px;
+  }
+
+  .hero-mini-card--one {
+    right: 190px;
+    top: auto;
+    bottom: 194px;
+    min-width: 92px;
+    min-height: 52px;
+    font-size: 21px;
+  }
+
+  .hero-mini-card--two {
+    right: 28px;
+    bottom: 258px;
+    min-width: 92px;
+    min-height: 52px;
+    font-size: 21px;
+  }
+
+  .hero-line--one {
+    right: 88px;
+    bottom: 52px;
+  }
+
+  .hero-line--two,
+  .hero-star--two {
+    display: none;
+  }
+
+  .topbar {
+    display: grid;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .progress-count {
+    text-align: left;
+  }
+
+  .question-card,
+  .topbar,
+  .meme-stage {
+    border-radius: 20px;
+  }
+
+  .meme-poster,
+  .song-poster,
+  .groom-poster,
+  .options-poster,
+  .answer-poster {
+    min-height: 260px;
+    border-radius: 18px;
+  }
+
+  .groom-poster .poster-title,
+  .song-poster .poster-title {
+    margin-top: 138px;
+  }
+}
